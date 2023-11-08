@@ -1,31 +1,25 @@
-import { useEffect, useState } from 'react'
 import './App.css'
-import { storage } from './firebase'
-import { ref, listAll, getDownloadURL } from 'firebase/storage'
+import { Route, Routes } from 'react-router-dom'
+import HellWorld from './pages/HellWorld'
+import PictureContainer from './pages/PictureContainer'
+import Hemma from './pages/Hemma'
+import NavBar from './components/NavBar'
+import ContactBar from './components/ContactBar'
+import AboutMe from './pages/AboutMe'
+import ProjectPage from './pages/ProjectPage'
 
 function App(): JSX.Element {
-    const [imageList, setImageList] = useState<string[]>([])
-    const imageListRef = ref(storage, 'images/')
-
-    useEffect(() => {
-        setImageList([])
-        listAll(imageListRef).then((resp) => {
-            resp.items.forEach((item) => {
-                getDownloadURL(item).then((url) => {
-                    setImageList((prev) => [...prev, url])
-                })
-            })
-        })
-    }, [])
 
     return (
         <>
-            <h1>Portfolio</h1>
-            <div className="list-container">
-                {imageList.map((url, index) => (
-                    <img key={index} src={url} alt="bilder" />
-                ))}
-            </div>
+        <NavBar />
+            <Routes>
+                {/* TEST, SKA BORT! */}
+                <Route path="/" element={<Hemma />} />
+                <Route path="/projects" element={<ProjectPage />} />
+                <Route path="/about" element={<AboutMe />} />
+            </Routes>
+            <ContactBar />
         </>
     )
 }
