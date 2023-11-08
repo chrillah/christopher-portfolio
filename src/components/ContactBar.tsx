@@ -35,7 +35,6 @@ function ContactBar() {
                     Contact
                 </button>
             </div>
-
             <div className={contactOpen ? 'contact-open' : 'contact-closed'}>
                 <ul className=""></ul>
             </div>
