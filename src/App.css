@@ -14,7 +14,6 @@ body {
 }
 
 ul {
-
     padding: 0;
     margin: 0;
 }
@@ -32,17 +31,20 @@ button {
     cursor: pointer;
 }
 
-.nav-bar-wrapper {
-    /* height: 50px; */
+.nav-bar-wrapper,
+.footer-bar-wrapper {
     border: solid var(--border-color) var(--border-weight);
     border-radius: var(--border-radius);
     width: 100%;
-    top: 0;
-    left: 0;
     position: fixed;
     background-color: var(--container-color);
     display: grid;
-    grid-template-rows: 50px auto;
+    grid-template-rows: 30px auto;
+}
+
+.nav-bar-wrapper {
+    top: 0;
+    left: 0;
 }
 
 .nav-bar-container {
@@ -67,12 +69,11 @@ button {
     border-radius: calc(var(--border-radius) * 10);
     padding: 1rem 2rem;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .on-site-button {
     color: var(--dark);
-    font-size: 18px;
     font-weight: bolder;
     padding: 1rem 1rem;
     display: flex;
@@ -160,29 +161,18 @@ button {
 .contact-open {
     background-color: var(--dark);
     height: 60vh;
-    transition:
-    height 300ms ease-in,
-    background-color 300ms ease-out;
+    transition: height 300ms ease-in, background-color 300ms ease-out;
 }
 
 .contact-closed {
     overflow: hidden;
     height: 0;
-    transition: height 150ms ease-in-out,
-    background-color 300ms ease-out;
-    ;
+    transition: height 150ms ease-in-out, background-color 300ms ease-out;
 }
 
-.footer-bar-wrapper{
-    border: solid var(--border-color) var(--border-weight);
-    border-radius: var(--border-radius);
-    width: 100%;
+.footer-bar-wrapper {
     bottom: 0;
     left: 0;
-    position: fixed;
-    background-color: var(--container-color);
-    display: grid;
-    grid-template-rows: 50px auto;
 }
 
 .footer-bar-container {
@@ -191,7 +181,7 @@ button {
     align-items: center;
 }
 
-.test-page{
+.test-page {
     color: white;
     text-align: center;
     margin-top: 20vh;
