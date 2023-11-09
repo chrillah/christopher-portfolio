@@ -41,17 +41,7 @@ function NavBar() {
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     <div className={menuOpen ? 'rotate' : 'no-rotate'}>
-                        <svg
-                            id="Layer_1"
-                            data-name="Layer 1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24.98 42.21"
-                        >
-                            <polyline
-                                className="arrow"
-                                points="2.38 .89 22.6 21.11 2.38 41.32"
-                            />
-                        </svg>
+                        <img src="./img/arrow.png" alt="" />
                     </div>
                     Menu
                 </button>
