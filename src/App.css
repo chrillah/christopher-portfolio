@@ -17,6 +17,7 @@ body {
 
 ul,
 li,
+a,
 p,
 h1,
 h2,
@@ -30,6 +31,10 @@ h6 {
 
 li {
     list-style: none;
+    text-decoration: none;
+}
+
+a{
     text-decoration: none;
 }
 
@@ -172,8 +177,21 @@ button {
 
 .contact-open {
     background-color: var(--dark);
-    height: 60vh;
+    /* height: auto; */
+    height: 500px;
     transition: height 300ms ease-in, background-color 300ms ease-out;
+}
+
+@media(min-width: 768px){
+    .contact-open {
+        height: 340px;
+    }
+}
+
+@media(min-width: 1024px){
+    .contact-open {
+        height: 240px;
+    }
 }
 
 .contact-closed {
@@ -181,8 +199,6 @@ button {
     height: 0;
     transition: height 150ms ease-in-out, background-color 300ms ease-out;
 }
-
-
 
 .footer-bar-container {
     display: flex;
@@ -198,7 +214,7 @@ button {
 
 /* about me */
 
-.about-wrapper{
+.about-wrapper {
     gap: 1px;
     display: grid;
     padding: 0;
@@ -206,7 +222,7 @@ button {
 }
 
 .about-container-1,
-.about-container-2{
+.about-container-2 {
     background-color: var(--dark);
     display: grid;
     gap: 1px;
@@ -221,9 +237,7 @@ button {
     grid-template-rows: 1fr 1fr;
 }
 
-
-
-.about-container-2{
+.about-container-2 {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 1fr 1fr;
@@ -245,96 +259,162 @@ button {
     align-items: center;
 }
 
-.competence-item-container{
+.competence-list{
+    padding-left: 6rem;
+}
+
+.competence-item-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-rows: 50px auto;
     padding: 1rem;
     /* max-width: 800px; */
 }
 
 .about-item-2 {
-
 }
 
-.big-title{
+.big-title {
     /* font-size: 15vh; */
 }
 
-.presentation-text{
+.presentation-text {
     font-size: 20px;
     max-width: 400px;
 }
 
-.education-item-container{
+.education-item-container {
     padding: 1rem;
     display: grid;
     grid-template-rows: 50px 1fr;
     overflow-x: auto;
 }
 
-.education-container{
-    display: flex;
-    justify-content: space-around;
+.education-container {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    gap: 5rem;
+    padding: 0 6rem;
 }
 
-.about-container-3{
+.about-container-3 {
     padding: 1rem;
     display: grid;
     grid-template-rows: 50px auto;
     margin-bottom: 23px;
 }
 
-.work-list{
-    display: flex;
-    justify-content: space-around;
-    overflow-y: hidden;
+.work-list {
+    padding: 0 6rem;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    gap: 10rem;
 }
 
-.work-item{
-    max-width: 200px;
+.work-item {
+    width: 100%;
+    width: 200px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.about-title{
+.about-title {
     font: 24px;
     font-weight: 900;
 }
 
-.education-title{
+.education-title {
     font-size: 18px;
     font-weight: 700;
     max-width: 120px;
 }
 
-.school-title{
+.school-title {
     max-width: 120px;
 }
 
-.tools-and-knowledge-header{
-
+.tools-and-knowledge-header {
 }
 
-.knowledge-list{
+.knowledge-list {
     max-width: 120px;
 }
 
-.education-item{
+.education-item {
     display: grid;
     gap: 10px;
 }
-
 
 @media (min-width: 500px) {
     .about-container-1 {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
     }
-    .about-container-2{
+    .about-container-2 {
         display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: auto;
     }
+}
 
+.contact-list{
+    display: grid;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+@media (min-width: 768px){
+    .contact-list{
+        grid-template-columns: auto auto;
+    }
+}
+
+.contact-item a{
+    display: grid;
+}
+
+@media (min-width: 1024px){
+    .contact-item a{
+        grid-template-columns: 60px auto;
+    }
+}
+
+.contact-info{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--light);
+    max-width: 200px;
+}
+
+.icon-container{
+
+}
+
+#mobile-icon,
+#mail-icon,
+#linkedin-icon,
+#github-icon{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+#mobile-icon{
+    background-image: url('./img/device-mobile-camera-thin.png');
+}
+
+#mail-icon{
+    background-image: url('./img/envelope-thin.png');
+}
+
+#linkedin-icon{
+    background-image: url('./img/linkedin-logo-thin.png');
+}
+
+#github-icon{
+    background-image: url('./img/github-logo-thin.png');
 }

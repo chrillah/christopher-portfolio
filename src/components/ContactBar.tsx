@@ -50,7 +50,41 @@ function ContactBar() {
             </div>
 
             <div className={contactOpen ? 'contact-open' : 'contact-closed'}>
-                <ul className=""></ul>
+                <ul className="contact-list">
+                    <li className="contact-item">
+                        <a href="tel:+46736703219" target='blanc'>
+                            <div id="mobile-icon">
+                            </div>
+                            <p className="contact-info">+46 736 70 32 19</p>
+                        </a>
+                    </li>
+                    <li className="contact-item">
+                        <a href="mailto:christopher.ronnberg@hotmail.com" target='blanc'>
+                            <div id="mail-icon">
+                            </div>
+                            <p className="contact-info">
+                                christopher.ronnberg
+                                @hotmail.com</p>
+                        </a>
+                    </li>
+                    <li className="contact-item">
+                        <a href="https://www.linkedin.com/in/christopher-r%C3%B6nnberg/" target='blanc'>
+                            <div id="linkedin-icon">
+                            </div>
+                            <p className="contact-info">
+                                https://www.linkedin.com/in
+                                /christopher-rönnberg/
+                                </p>
+                        </a>
+                    </li>
+                    <li className="contact-item">
+                        <a href="https://github.com/chrillah" target='blanc'>
+                            <div id="github-icon">
+                            </div>
+                            <p className="contact-info">https://github.com/chrillah</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </footer>
     )
