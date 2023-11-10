@@ -159,12 +159,11 @@ button {
 }
 
 .caret {
-    background-image: url('./img/arrow.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 60px;
-    height: 60px;
+    width: 8px;
+    height: 8px;
+    border-bottom: var(--dark) 2px solid;
+    border-right: var(--dark) 2px solid;
+    transform-origin: top left;
 }
 
 .rotate-b,
@@ -173,17 +172,23 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10px;
 }
 
 .no-rotate {
-    rotate: 0;
-    transition: rotate 150ms ease-out;
+    rotate: -45deg;
+    transition:
+    rotate 150ms ease-out,
+    margin-bottom 150ms ease-out;
 }
 
 .rotate {
-    rotate: 90deg;
-    transition: rotate 100ms ease-out;
+    rotate: 45deg;
+    transition:
+    rotate 100ms ease-out,
+    margin-bottom 150ms ease-out;
+    ;
+    margin-bottom: 6px;
+
 }
 
 .rotate-b {
