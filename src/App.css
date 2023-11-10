@@ -246,19 +246,19 @@ button {
     overflow: auto;
     background-color: var(--dark);
     /* height: auto; */
-    height: 500px;
+    height: 370px;
     transition: height 300ms ease-in, background-color 300ms ease-out;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 514px) {
     .contact-open {
-        height: 340px;
+        height: 280px;
     }
 }
 
 @media (min-width: 1024px) {
     .contact-open {
-        height: 240px;
+        height: 200px;
     }
 }
 
@@ -446,7 +446,7 @@ button {
     gap: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
     .contact-list {
         grid-template-columns: auto auto;
     }
@@ -455,6 +455,13 @@ button {
 .contact-item a {
     display: grid;
 }
+
+@media (max-width: 499px) {
+    .contact-item a {
+        grid-template-columns: 60px auto;
+    }
+}
+
 
 @media (min-width: 1024px) {
     .contact-item a {

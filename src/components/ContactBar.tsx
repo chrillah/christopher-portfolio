@@ -47,7 +47,7 @@ function ContactBar() {
                 >
                     <ul className="contact-list">
                         <li className="contact-item">
-                            <a href="tel:+46736703219" target="blanc">
+                            <a href="tel:+46736703219">
                                 <div id="mobile-icon"></div>
                                 <p className="contact-info">+46 736 70 32 19</p>
                             </a>
@@ -55,7 +55,6 @@ function ContactBar() {
                         <li className="contact-item">
                             <a
                                 href="mailto:christopher.ronnberg@hotmail.com"
-                                target="blanc"
                             >
                                 <div id="mail-icon"></div>
                                 <p className="contact-info">
