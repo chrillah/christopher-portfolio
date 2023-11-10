@@ -176,6 +176,7 @@ button {
 }
 
 .contact-open {
+    overflow: auto;
     background-color: var(--dark);
     /* height: auto; */
     height: 500px;
