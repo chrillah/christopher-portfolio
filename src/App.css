@@ -45,7 +45,7 @@ button {
 }
 
 .nav-bar-wrapper,
-.footer-bar-wrapper {
+.footer-bar-wrapper{
     left: 6px;
     right: 6px;
     border: solid var(--border-color) var(--border-weight);
@@ -55,6 +55,22 @@ button {
     background-color: var(--container-color);
     display: grid;
     grid-template-rows: 30px auto;
+}
+
+.black-cover-nav,
+.black-cover-footer{
+    background-color: var(--dark);
+    left: 6px;
+    right: 6px;
+    position: fixed;
+    height: 20px;
+}
+
+.black-cover-nav{
+    top:0;
+}
+.black-cover-footer{
+    bottom:0;
 }
 
 .nav-bar-wrapper {

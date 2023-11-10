@@ -25,50 +25,52 @@ function NavBar() {
         }
     }, [])
 
-
     return (
-        <nav ref={menuRef} className="nav-bar-wrapper">
-            <div className="nav-bar-container">
-                <Link
-                    onClick={() => setMenuOpen(false)}
-                    className="link-logo"
-                    to="/"
-                >
-                    About
-                </Link>
-                <button
-                    className="on-site-button"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    <div className={menuOpen ? 'rotate' : 'no-rotate'}>
-                        <img src="./img/arrow.png" alt="" />
-                    </div>
-                    Menu
-                </button>
-            </div>
-            <div className={menuOpen ? 'menu-open' : 'menu-closed'}>
-                <ul className="link-container">
-                    <li>
-                        <Link
-                            onClick={() => setMenuOpen(false)}
-                            className="link-button"
-                            to="/about"
-                        >
-                            About
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            onClick={() => setMenuOpen(false)}
-                            className="link-button"
-                            to="/projects"
-                        >
-                            Projects
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <>
+            <div className="black-cover-nav"></div>
+            <nav ref={menuRef} className="nav-bar-wrapper">
+                <div className="nav-bar-container">
+                    <Link
+                        onClick={() => setMenuOpen(false)}
+                        className="link-logo"
+                        to="/"
+                    >
+                        About
+                    </Link>
+                    <button
+                        className="on-site-button"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        <div className={menuOpen ? 'rotate' : 'no-rotate'}>
+                            <img src="./img/arrow.png" alt="" />
+                        </div>
+                        Menu
+                    </button>
+                </div>
+                <div className={menuOpen ? 'menu-open' : 'menu-closed'}>
+                    <ul className="link-container">
+                        <li>
+                            <Link
+                                onClick={() => setMenuOpen(false)}
+                                className="link-button"
+                                to="/about"
+                            >
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                onClick={() => setMenuOpen(false)}
+                                className="link-button"
+                                to="/projects"
+                            >
+                                Projects
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </>
     )
 }
 
