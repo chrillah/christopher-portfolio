@@ -39,15 +39,13 @@ button {
     cursor: pointer;
 }
 
-.app-bg{
-    position: absolute;
-}
-
 .nav-bar-wrapper,
 .footer-bar-wrapper {
+    left: 6px;
+    right: 6px;
     border: solid var(--border-color) var(--border-weight);
     border-radius: var(--border-radius);
-    width: 100%;
+    /* width: 100%; */
     position: fixed;
     background-color: var(--container-color);
     display: grid;
@@ -56,7 +54,9 @@ button {
 
 .nav-bar-wrapper {
     top: 0;
-    left: 0;
+}
+.footer-bar-wrapper {
+    bottom: 0;
 }
 
 .nav-bar-container {
@@ -182,10 +182,7 @@ button {
     transition: height 150ms ease-in-out, background-color 300ms ease-out;
 }
 
-.footer-bar-wrapper {
-    bottom: 0;
-    left: 0;
-}
+
 
 .footer-bar-container {
     display: flex;
@@ -202,7 +199,7 @@ button {
 /* about me */
 
 .about-wrapper{
-    gap: 2px;
+    gap: 1px;
     display: grid;
     padding: 0;
     margin: 0;
@@ -212,28 +209,24 @@ button {
 .about-container-2{
     background-color: var(--dark);
     display: grid;
-    gap: 2px;
+    gap: 1px;
 }
 
 .about-container-1 {
     height: 90vh;
-    margin-top: 24px;
-    background-color: var(--dark);
+    margin-top: 23px;
+    /* background-color: var(--dark); */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
-@media (min-width: 500px) {
-    .about-container-1 {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-    }
-}
+
 
 .about-container-2{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
 }
 
 .about-item-1,
@@ -288,7 +281,7 @@ button {
     padding: 1rem;
     display: grid;
     grid-template-rows: 50px auto;
-    margin-bottom: 25px;
+    margin-bottom: 23px;
 }
 
 .work-list{
@@ -330,4 +323,18 @@ button {
 .education-item{
     display: grid;
     gap: 10px;
+}
+
+
+@media (min-width: 500px) {
+    .about-container-1 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .about-container-2{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+    }
+
 }

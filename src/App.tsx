@@ -7,10 +7,9 @@ import AboutMe from './pages/AboutMe'
 import ProjectPage from './pages/ProjectPage'
 
 function App(): JSX.Element {
-
     return (
         <>
-        <NavBar />
+            <NavBar />
             <Routes>
                 {/* TEST, SKA BORT! */}
                 <Route path="/" element={<Hemma />} />
