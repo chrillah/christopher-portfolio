@@ -387,6 +387,12 @@ button {
     padding: 0 6rem;
 }
 
+.education-item {
+    width: 200px;
+    display: grid;
+    gap: 5px;
+}
+
 .about-container-3 {
     padding: 1rem;
     display: grid;
@@ -435,11 +441,6 @@ button {
 
 .knowledge-list {
     max-width: 220px;
-}
-
-.education-item {
-    display: grid;
-    gap: 5px;
 }
 
 @media (min-width: 500px) {
