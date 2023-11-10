@@ -28,6 +28,7 @@ function NavBar() {
     return (
         <>
             <div className="black-cover-nav"></div>
+            <div className="transparent-cover-nav"></div>
             <nav ref={menuRef} className="nav-bar-wrapper">
                 <div className="nav-bar-container">
                     <Link
@@ -42,7 +43,7 @@ function NavBar() {
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
                         <div className={menuOpen ? 'rotate' : 'no-rotate'}>
-                            <img src="./img/arrow.png" alt="" />
+                            <div className="caret"></div>
                         </div>
                         Menu
                     </button>

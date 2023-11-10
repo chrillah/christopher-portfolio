@@ -4,6 +4,7 @@
 
     --border-weight: 1px;
     --border-radius: 10px;
+    --max-width: 1666px;
     --border-color: var(--dark);
     --container-color: var(--light);
 }
@@ -34,7 +35,7 @@ li {
     text-decoration: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -44,10 +45,18 @@ button {
     cursor: pointer;
 }
 
+.app-bg{
+    background-color: var(--dark);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
 .nav-bar-wrapper,
-.footer-bar-wrapper{
-    left: 6px;
-    right: 6px;
+.footer-bar-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    left: 7px;
+    right: 7px;
     border: solid var(--border-color) var(--border-weight);
     border-radius: var(--border-radius);
     /* width: 100%; */
@@ -58,19 +67,47 @@ button {
 }
 
 .black-cover-nav,
-.black-cover-footer{
+.black-cover-footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
     background-color: var(--dark);
-    left: 6px;
-    right: 6px;
+    left: 7px;
+    right: 7px;
     position: fixed;
-    height: 20px;
+    height: 30px;
 }
 
-.black-cover-nav{
-    top:0;
+.transparent-cover-footer,
+.transparent-cover-nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    left: 7px;
+    right: 7px;
+    position: fixed;
+    height: 50px;
 }
-.black-cover-footer{
-    bottom:0;
+
+.transparent-cover-nav {
+    top: 31px;
+    box-shadow: 0px -26px 0px 0px var(--dark);
+    -webkit-box-shadow: 0px -26px 0px 0px var(--dark);
+    -moz-box-shadow: 0px -26px 0px 0px var(--dark);
+}
+
+.transparent-cover-footer {
+    bottom: 31px;
+    box-shadow: 0px 26px 0px 0px var(--dark);
+    -webkit-box-shadow: 0px 26px 0px 0px var(--dark);
+    -moz-box-shadow: 0px 26px 0px 0px var(--dark);
+}
+
+.black-cover-nav {
+    top: 0;
+}
+.black-cover-footer {
+    bottom: 0;
 }
 
 .nav-bar-wrapper {
@@ -119,6 +156,15 @@ button {
     stroke: var(--dark);
     stroke-miterlimit: 10;
     stroke-width: 3;
+}
+
+.caret {
+    background-image: url('./img/arrow.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
 }
 
 .rotate-b,
@@ -199,13 +245,13 @@ button {
     transition: height 300ms ease-in, background-color 300ms ease-out;
 }
 
-@media(min-width: 768px){
+@media (min-width: 768px) {
     .contact-open {
         height: 340px;
     }
 }
 
-@media(min-width: 1024px){
+@media (min-width: 1024px) {
     .contact-open {
         height: 240px;
     }
@@ -276,7 +322,7 @@ button {
     align-items: center;
 }
 
-.competence-list{
+.competence-list {
     padding-left: 6rem;
 }
 
@@ -284,17 +330,30 @@ button {
     display: grid;
     grid-template-rows: 50px auto;
     padding: 1rem;
-    /* max-width: 800px; */
 }
 
 .about-item-2 {
 }
 
 .big-title {
-    /* font-size: 15vh; */
+    padding: 1rem;
+    font-size: 5rem;
+}
+
+@media (min-width: 768px) {
+    .big-title {
+        font-size: 7rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .big-title {
+        font-size: 10rem;
+    }
 }
 
 .presentation-text {
+    padding: 1rem;
     font-size: 20px;
     max-width: 400px;
 }
@@ -376,43 +435,42 @@ button {
     }
 }
 
-.contact-list{
+.contact-list {
     display: grid;
     padding: 2rem;
     gap: 2rem;
 }
 
-@media (min-width: 768px){
-    .contact-list{
+@media (min-width: 768px) {
+    .contact-list {
         grid-template-columns: auto auto;
     }
 }
 
-.contact-item a{
+.contact-item a {
     display: grid;
 }
 
-@media (min-width: 1024px){
-    .contact-item a{
+@media (min-width: 1024px) {
+    .contact-item a {
         grid-template-columns: 60px auto;
     }
 }
 
-.contact-info{
+.contact-info {
     margin-top: auto;
     margin-bottom: auto;
     color: var(--light);
     max-width: 200px;
 }
 
-.icon-container{
-
+.icon-container {
 }
 
 #mobile-icon,
 #mail-icon,
 #linkedin-icon,
-#github-icon{
+#github-icon {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -420,18 +478,18 @@ button {
     height: 50px;
 }
 
-#mobile-icon{
+#mobile-icon {
     background-image: url('./img/device-mobile-camera-thin.png');
 }
 
-#mail-icon{
+#mail-icon {
     background-image: url('./img/envelope-thin.png');
 }
 
-#linkedin-icon{
+#linkedin-icon {
     background-image: url('./img/linkedin-logo-thin.png');
 }
 
-#github-icon{
+#github-icon {
     background-image: url('./img/github-logo-thin.png');
 }

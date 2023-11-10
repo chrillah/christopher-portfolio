@@ -8,7 +8,7 @@ import ProjectPage from './pages/ProjectPage'
 
 function App(): JSX.Element {
     return (
-        <>
+        <div className='app-bg'>
             <NavBar />
             <Routes>
                 {/* TEST, SKA BORT! */}
@@ -17,7 +17,7 @@ function App(): JSX.Element {
                 <Route path="/about" element={<AboutMe />} />
             </Routes>
             <ContactBar />
-        </>
+        </div>
     )
 }
 

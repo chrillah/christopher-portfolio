@@ -28,6 +28,7 @@ function ContactBar() {
     return (
         <>
             <div className="black-cover-footer"></div>
+            <div className="transparent-cover-footer"></div>
             <footer ref={contactRef} className="footer-bar-wrapper">
                 <div className="footer-bar-container">
                     <button
@@ -35,17 +36,7 @@ function ContactBar() {
                         onClick={() => setContactOpen(!contactOpen)}
                     >
                         <div className={contactOpen ? 'rotate' : 'no-rotate'}>
-                            <svg
-                                id="Layer_1"
-                                data-name="Layer 1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24.98 42.21"
-                            >
-                                <polyline
-                                    className="arrow"
-                                    points="2.38 .89 22.6 21.11 2.38 41.32"
-                                />
-                            </svg>
+                            <div className="caret"></div>
                         </div>
                         Contact
                     </button>
