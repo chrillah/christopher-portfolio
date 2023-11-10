@@ -1,6 +1,15 @@
 :root {
+    --dark-viol-1: #19073f;
+    --light-viol-1: #eadcf3;
+    --light-viol-2: #e2dbff;
+
+    --light-pink-1: #e4dbdb;
+
+    --dark-brown-1: #26231c;
+    --light-latte-1: #f2f2f2;
+
     --dark: #000000;
-    --light: #ffffff;
+    --light: var(--light-pink-1);
 
     --border-weight: 1px;
     --border-radius: 10px;
@@ -35,7 +44,19 @@ li {
     text-decoration: none;
 }
 
-h6{
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark);
+}
+
+h6 {
     font-weight: bolder;
 }
 
@@ -49,7 +70,7 @@ button {
     cursor: pointer;
 }
 
-.app-bg{
+.app-bg {
     background-color: var(--dark);
     max-width: var(--max-width);
     margin: 0 auto;
@@ -181,19 +202,13 @@ button {
 
 .no-rotate {
     rotate: -45deg;
-    transition:
-    rotate 150ms ease-out,
-    margin-bottom 150ms ease-out;
+    transition: rotate 150ms ease-out, margin-bottom 150ms ease-out;
 }
 
 .rotate {
     rotate: 45deg;
-    transition:
-    rotate 100ms ease-out,
-    margin-bottom 150ms ease-out;
-    ;
+    transition: rotate 100ms ease-out, margin-bottom 150ms ease-out;
     margin-bottom: 6px;
-
 }
 
 .rotate-b {
@@ -246,7 +261,6 @@ button {
         grid-template-columns: 1fr 1fr;
     }
 }
-
 
 .test-page {
     color: white;
@@ -305,9 +319,8 @@ button {
     padding-left: 6rem;
 }
 
-.competence-list li{
+.competence-list li {
     font-weight: 700;
-
 }
 
 .competence-item-container {
@@ -342,11 +355,21 @@ button {
     max-width: 400px;
 }
 
+.education-item-container::-webkit-scrollbar {
+    display: none;
+}
+
 .education-item-container {
     padding: 1rem;
     display: grid;
     grid-template-rows: 50px 1fr;
     overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.education-container::-webkit-scrollbar {
+    display: none;
 }
 
 .education-container {
@@ -355,6 +378,8 @@ button {
     overflow-x: scroll;
     gap: 5rem;
     padding: 0 6rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .education-item {
@@ -370,12 +395,17 @@ button {
     margin-bottom: 23px;
 }
 
+.work-list::-webkit-scrollbar {
+    display: none;
+}
 .work-list {
     padding: 0 6rem;
     display: grid;
     grid-auto-flow: column;
     overflow-x: scroll;
     gap: 10rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .work-item {
@@ -386,7 +416,7 @@ button {
     gap: 10px;
 }
 
-.work-title{
+.work-title {
     font-style: italic;
 }
 
@@ -418,6 +448,9 @@ button {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
     }
+}
+
+@media (min-width: 616px) {
     .about-container-2 {
         display: grid;
         grid-template-columns: auto auto;
