@@ -254,13 +254,7 @@ button {
     transition: height 300ms ease-in, background-color 300ms ease-out;
 }
 
-@media (min-width: 514px) {
-    .contact-open {
-        height: 280px;
-    }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
     .contact-open {
         height: 200px;
     }
@@ -461,7 +455,7 @@ button {
     gap: 2rem;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     .contact-list {
         grid-template-columns: auto auto;
     }
@@ -469,14 +463,14 @@ button {
 
 .contact-item a {
     display: grid;
+    grid-template-columns: 60px auto;
 }
 
-@media (max-width: 499px) {
+/* @media (max-width: 499px) {
     .contact-item a {
         grid-template-columns: 60px auto;
     }
-}
-
+} */
 
 @media (min-width: 1024px) {
     .contact-item a {
