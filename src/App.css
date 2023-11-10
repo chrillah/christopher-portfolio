@@ -35,6 +35,10 @@ li {
     text-decoration: none;
 }
 
+h6{
+    font-weight: bolder;
+}
+
 a {
     text-decoration: none;
 }
@@ -331,6 +335,11 @@ button {
     padding-left: 6rem;
 }
 
+.competence-list li{
+    font-weight: 700;
+
+}
+
 .competence-item-container {
     display: grid;
     grid-template-rows: 50px auto;
@@ -401,6 +410,10 @@ button {
     gap: 10px;
 }
 
+.work-title{
+    font-style: italic;
+}
+
 .about-title {
     font: 24px;
     font-weight: 900;
@@ -417,15 +430,16 @@ button {
 }
 
 .tools-and-knowledge-header {
+    font-weight: 900;
 }
 
 .knowledge-list {
-    max-width: 120px;
+    max-width: 220px;
 }
 
 .education-item {
     display: grid;
-    gap: 10px;
+    gap: 5px;
 }
 
 @media (min-width: 500px) {
