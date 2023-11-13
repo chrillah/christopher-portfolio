@@ -64,39 +64,61 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
 
     return (
         <>
-            {isSelected ? (
-                <div className="project-item">
-                    <button
-                        className="back-button"
-                        onClick={() => setIsSelected(false)}
-                    >
-                        <div className="caret rev"></div>
-                        Back
-                    </button>
-                    <div className="project-container"></div>
-                </div>
-            ) : (
-                <button
-                    onClick={() => {
-                        onFilteredListRef(imageList)
-                        setIsSelected(true)
-                    }}
-                    className="grid-item"
-                >
-                    {imageList.length > 0 && (
-                        <div
-                            style={{
-                                backgroundImage: `url(${imageList[currentImageIndex]})`,
-                                height: '100%',
-                                backgroundPosition: 'center',
-                                backgroundSize: 'cover'
-                            }}
-                            className="project-image-container"
-                        ></div>
-                    )}
-                </button>
-            )}
+            <button
+                onClick={() => {
+                    onFilteredListRef(imageList)
+                    setIsSelected(true)
+                }}
+                className="grid-item"
+            >
+                {imageList.length > 0 && (
+                    <div
+                        style={{
+                            backgroundImage: `url(${imageList[currentImageIndex]})`,
+                            height: '100%',
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover'
+                        }}
+                        className="project-image-container"
+                    ></div>
+                )}
+            </button>
         </>
+        // <>
+        //     {isSelected ? (
+        //         <div className="project-item-wrapper">
+        //             <div className="project-container">
+        //                 <button
+        //                     className="back-button"
+        //                     onClick={() => setIsSelected(false)}
+        //                 >
+        //                     <div className="caret rev"></div>
+        //                     Back
+        //                 </button>
+        //             </div>
+        //         </div>
+        //     ) : (
+        //         <button
+        //             onClick={() => {
+        //                 onFilteredListRef(imageList)
+        //                 setIsSelected(true)
+        //             }}
+        //             className="grid-item"
+        //         >
+        //             {imageList.length > 0 && (
+        //                 <div
+        //                     style={{
+        //                         backgroundImage: `url(${imageList[currentImageIndex]})`,
+        //                         height: '100%',
+        //                         backgroundPosition: 'center',
+        //                         backgroundSize: 'cover'
+        //                     }}
+        //                     className="project-image-container"
+        //                 ></div>
+        //             )}
+        //         </button>
+        //     )}
+        // </>
     )
 }
 

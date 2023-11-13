@@ -218,19 +218,6 @@ button {
     align-items: center;
     gap: 0.5rem;
 }
-
-.back-button {
-    position: fixed;
-    z-index: 999;
-    top: 35px;
-    left: 1rem;
-    color: var(--dark);
-    font-weight: bolder;
-    padding: 1rem 1rem;
-    display: flex;
-    align-items: center;
-}
-
 .arrow {
     fill: none;
     stroke: var(--dark);
@@ -707,7 +694,7 @@ button {
     background-size: 'cover'; */
 }
 
-.project-item{
+.project-item-wrapper{
     max-width: var(--max-width);
     margin: 0 auto;
     position: absolute;
@@ -715,14 +702,32 @@ button {
     bottom: 0;
     left: 8px;
     right: 8px;
-    height: 100vh;
-    overflow: auto;
     background-color: aqua;
 
     display: grid;
     grid-template-columns: 100px auto;
 }
 
-.project-container{
+.back-button {
+    /* position: fixed;
+    z-index: 999;
+    top: 35px;
+    left: 1rem; */
+    position: relative;
+    z-index: 999;
+    margin-top: 50px;
+    color: var(--dark);
+    font-weight: bolder;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+}
 
+
+.project-container{
+    overflow: scroll;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
