@@ -12,7 +12,7 @@
     --light: var(--light-pink-1);
 
     --border-weight: 1px;
-    --border-radius: 10px;
+    --border-radius: 5px;
     --max-width: 1666px;
     --border-color: var(--dark);
     --container-color: var(--light);
@@ -34,7 +34,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+img {
     padding: 0;
     margin: 0;
 }
@@ -62,6 +63,11 @@ h6 {
 
 a {
     text-decoration: none;
+}
+
+img{
+    height: auto;
+    max-width: 100%;
 }
 
 button {
@@ -115,14 +121,14 @@ button {
 }
 
 .transparent-cover-nav {
-    top: 31px;
+    top: 32px;
     box-shadow: 0px -26px 0px 0px var(--dark);
     -webkit-box-shadow: 0px -26px 0px 0px var(--dark);
     -moz-box-shadow: 0px -26px 0px 0px var(--dark);
 }
 
 .transparent-cover-footer {
-    bottom: 31px;
+    bottom: 32px;
     box-shadow: 0px 26px 0px 0px var(--dark);
     -webkit-box-shadow: 0px 26px 0px 0px var(--dark);
     -moz-box-shadow: 0px 26px 0px 0px var(--dark);
@@ -553,4 +559,24 @@ button {
 
 #github-icon {
     background-image: url('./img/github-logo-thin.png');
+}
+
+
+/* project page */
+
+.grid-wrapper{
+
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px;
+}
+
+.grid-item{
+    border-radius: var(--border-radius);
+    /* background-color: blue;
+    height: 200px; */
 }
