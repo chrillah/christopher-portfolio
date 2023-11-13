@@ -1,8 +1,15 @@
 import { Link, useParams } from 'react-router-dom';
-import ImageListRefs from '../ImageListRefs';
+// import ImageListRefs from '../ImageListRefs';
 
 const ProjectItem = () =>{
     const { project } = useParams<{ project: string }>();
+
+
+    const test = () => {
+    console.log(project)
+    }
+
+    test();
     return (
         <div className="project-item-wrapper">
             <div className="project-container">
