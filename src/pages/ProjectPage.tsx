@@ -10,13 +10,13 @@ function ProjectPage() {
 
     // objekt istället för lista/array
     const imageListRefs: StorageReference[] | null = [
-        ref(storage, 'images/tjuvgods/'),
         ref(storage, 'images/eyes/'),
-        ref(storage, 'images/gomoku/'),
-        ref(storage, 'images/kwitter/'),
         ref(storage, 'images/rickandmorty/'),
         ref(storage, 'images/sweet/'),
-        ref(storage, 'images/techware/')
+        ref(storage, 'images/tjuvgods/'),
+        ref(storage, 'images/gomoku/'),
+        ref(storage, 'images/kwitter/'),
+        ref(storage, 'images/techware/'),
     ]
 
     return (

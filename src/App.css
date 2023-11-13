@@ -715,6 +715,7 @@ button {
     bottom: 0;
     left: 8px;
     right: 8px;
+    height: 100vh;
     overflow: auto;
     background-color: aqua;
 
