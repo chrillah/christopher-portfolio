@@ -85,6 +85,7 @@ button {
 
 .nav-bar-wrapper,
 .footer-bar-wrapper {
+    z-index: 999;
     max-width: var(--max-width);
     margin: 0 auto;
     left: 7px;
@@ -100,6 +101,7 @@ button {
 
 .black-cover-nav,
 .black-cover-footer {
+    z-index: 999;
     max-width: var(--max-width);
     margin: 0 auto;
     background-color: var(--dark);
@@ -111,6 +113,7 @@ button {
 
 .transparent-cover-footer,
 .transparent-cover-nav {
+    z-index: 999;
     max-width: var(--max-width);
     margin: 0 auto;
     border-radius: var(--border-radius);
@@ -159,6 +162,38 @@ button {
 .link-button {
     text-decoration: none;
     cursor: pointer;
+}
+
+.loader {
+    width: 100%;
+    height: 4.8px;
+    display: inline-block;
+    position: relative;
+    background: red;
+    /* background: rgba(255, 255, 255, 0.15); */
+    overflow: hidden;
+}
+.loader::after {
+    content: '';
+    width: 192px;
+    height: 4.8px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+    0% {
+        left: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        left: 100%;
+        transform: translateX(0%);
+    }
 }
 
 /* BUTTONS */
@@ -569,7 +604,7 @@ button {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 1px;
 }
@@ -614,7 +649,6 @@ button {
     }
 }
 
-
 .grid-item {
     border-radius: var(--border-radius);
     height: 300px;
@@ -654,4 +688,20 @@ button {
     /* height: 100%;
     background-position: 'center center';
     background-size: 'cover'; */
+}
+
+.project-item{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: scroll;
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

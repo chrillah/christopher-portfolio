@@ -6,15 +6,22 @@ interface GridItemProps {
 }
 
 const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
-    // boolean som kollar om det är en liten bild som syns
-    // eller om det är den stora som syns
+    const [isSelected, setIsSelected] = useState(false)
 
     // skapa en div om täcker hela skärmen + overfow: auto
 
     // lägg till knapp som förstorar projektet
 
     // knapp som förminskar projektet
-
+    const listOfProjects = [
+        'tjuvgods',
+        'kwitter',
+        'techware',
+        'rick',
+        'sweet',
+        'eyes',
+        'gomoku'
+    ]
     const [imageList, setImageList] = useState<string[]>([])
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -44,24 +51,47 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
         return () => clearInterval(intervalId)
     }, [imageList])
 
-    const message = (message: string[]) => {
-        console.log(message)
+    const onFilteredListRef = (urlParts: string[]) => {
+        listOfProjects.forEach((project) => {
+            const filteredArray = urlParts.filter((item) =>
+                item.includes(project)
+            )
+            if (filteredArray.length > 0) {
+                console.log(`Filtered parts for ${project}:`, filteredArray)
+            }
+        })
     }
 
     return (
-        <button onClick={() => message(imageList)} className="grid-item">
-            {imageList.length > 0 && (
-                <div
-                    style={{
-                        backgroundImage: `url(${imageList[currentImageIndex]})`,
-                        height: '100%',
-                        backgroundPosition: 'center',
-                        backgroundSize: 'cover'
+        <>
+            {isSelected ? (
+                <div className="project-item">
+                    <div className="top-container">
+                        <button onClick={()=> setIsSelected(false)}>KLICK</button>
+                    </div>
+                </div>
+            ) : (
+                <button
+                    onClick={() => {
+                        onFilteredListRef(imageList)
+                        setIsSelected(true)
                     }}
-                    className="project-image-container"
-                ></div>
+                    className="grid-item"
+                >
+                    {imageList.length > 0 && (
+                        <div
+                            style={{
+                                backgroundImage: `url(${imageList[currentImageIndex]})`,
+                                height: '100%',
+                                backgroundPosition: 'center',
+                                backgroundSize: 'cover'
+                            }}
+                            className="project-image-container"
+                        ></div>
+                    )}
+                </button>
             )}
-        </button>
+        </>
     )
 }
 
