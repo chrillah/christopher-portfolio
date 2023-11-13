@@ -1,52 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { StorageReference, listAll, getDownloadURL } from 'firebase/storage';
+import React, { useState, useEffect } from 'react'
+import { StorageReference, listAll, getDownloadURL } from 'firebase/storage'
 
 interface GridItemProps {
-  imagesRef: StorageReference;
+    imagesRef: StorageReference
 }
 
 const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
-  const [imageList, setImageList] = useState<string[]>([]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [imageList, setImageList] = useState<string[]>([])
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const resp = await listAll(imagesRef);
-        const urls = await Promise.all(
-          resp.items.map(async (item) => await getDownloadURL(item))
-        );
-        setImageList(urls);
-      } catch (error) {
-        console.error('Error loading images:', error);
-      }
-    };
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const resp = await listAll(imagesRef)
+                const urls = await Promise.all(
+                    resp.items.map(async (item) => await getDownloadURL(item))
+                )
+                setImageList(urls)
+            } catch (error) {
+                console.error('Error loading images:', error)
+            }
+        }
 
-    fetchImages();
-  }, [imagesRef]);
+        fetchImages()
+    }, [imagesRef])
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageList.length);
-    }, 3000); // Byter bild var 3:e sekund, ändra behovet
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentImageIndex(
+                (prevIndex) => (prevIndex + 1) % imageList.length
+            )
+        }, 1000)
 
-    return () => clearInterval(intervalId);
-  }, [imageList]);
+        return () => clearInterval(intervalId)
+    }, [imageList])
 
-  const message = () => {
-    console.log(imagesRef);
-  };
+    const message = () => {
+        console.log(imagesRef)
+    }
 
-  return (
-    <button onClick={() => message()} className="grid-item">
-      {imageList.length > 0 && (
-        <img
-          src={imageList[currentImageIndex]}
-          alt={`Image ${currentImageIndex}`}
-        />
-      )}
-    </button>
-  );
-};
+    return (
+        <button onClick={() => message()} className="grid-item">
+            {imageList.length > 0 && (
+                <div
+                    style={{
+                        backgroundImage: `url(${imageList[currentImageIndex]})`,
+                        height: '100%',
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover'
+                    }}
+                    className="project-image-container"
+                ></div>
+            )}
+        </button>
+    )
+}
 
-export default GridItem;
+export default GridItem

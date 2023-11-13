@@ -35,7 +35,8 @@ h3,
 h4,
 h5,
 h6,
-img {
+img,
+button {
     padding: 0;
     margin: 0;
 }
@@ -66,8 +67,8 @@ a {
 }
 
 img{
-    height: auto;
-    max-width: 100%;
+    width: auto;
+    max-height: 100%;
 }
 
 button {
@@ -570,13 +571,25 @@ button {
 
 .grid-container{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-template-rows: 1fr 1fr 1fr; */
     gap: 1px;
 }
 
 .grid-item{
     border-radius: var(--border-radius);
-    /* background-color: blue;
-    height: 200px; */
+    /* background-color: blue; */
+    height: 300px;
+    width: auto;
+    overflow: hidden;
+}
+
+.grid-item:last-child {
+    grid-column: span 3; /* eller span 3, span 4, etc. beroende på hur mycket plats du vill att den ska ta */
+  }
+
+.project-image-container{
+    /* height: 100%;
+    background-position: 'center center';
+    background-size: 'cover'; */
 }
