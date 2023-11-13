@@ -1,125 +1,79 @@
-import React, { useState, useEffect } from 'react'
-import { StorageReference, listAll, getDownloadURL } from 'firebase/storage'
+import React, { useState, useEffect } from 'react';
+import { StorageReference, listAll, getDownloadURL } from 'firebase/storage';
 
 interface GridItemProps {
-    imagesRef: StorageReference
+  imagesRef: StorageReference;
 }
 
 const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
-    const [isSelected, setIsSelected] = useState(false)
+  const [imageList, setImageList] = useState<string[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    // skapa en div om täcker hela skärmen + overfow: auto
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const resp = await listAll(imagesRef);
+        const urls = await Promise.all(
+          resp.items.map(async (item) => await getDownloadURL(item))
+        );
+        setImageList(urls);
+      } catch (error) {
+        console.error('Error loading images:', error);
+      }
+    };
 
-    // lägg till knapp som förstorar projektet
+    fetchImages();
+  }, [imagesRef]);
 
-    // knapp som förminskar projektet
-    const listOfProjects = [
-        'tjuvgods',
-        'kwitter',
-        'techware',
-        'rick',
-        'sweet',
-        'eyes',
-        'gomoku'
-    ]
-    const [imageList, setImageList] = useState<string[]>([])
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageList.length);
+    }, 4000);
 
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const resp = await listAll(imagesRef)
-                const urls = await Promise.all(
-                    resp.items.map(async (item) => await getDownloadURL(item))
-                )
-                setImageList(urls)
-            } catch (error) {
-                console.error('Error loading images:', error)
-            }
-        }
+    return () => clearInterval(intervalId);
+  }, [imageList]);
 
-        fetchImages()
-    }, [imagesRef])
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentImageIndex(
-                (prevIndex) => (prevIndex + 1) % imageList.length
-            )
-        }, 4000)
-
-        return () => clearInterval(intervalId)
-    }, [imageList])
-
-    const onFilteredListRef = (urlParts: string[]) => {
-        listOfProjects.forEach((project) => {
-            const filteredArray = urlParts.filter((item) =>
-                item.includes(project)
-            )
-            if (filteredArray.length > 0) {
-                console.log(`Filtered parts for ${project}:`, filteredArray)
-            }
-        })
+  const onFilteredListRef = async (urlParts: string[]) => {
+    for (const project of listOfProjects) {
+      const filteredArray = urlParts.filter((item) => item.includes(project));
+      if (filteredArray.length > 0) {
+        console.log(`Filtered parts for ${project}:`, filteredArray);
+        return project;
+      }
     }
+    return '';
+  };
 
-    return (
-        <>
-            <button
-                onClick={() => {
-                    onFilteredListRef(imageList)
-                    setIsSelected(true)
-                }}
-                className="grid-item"
-            >
-                {imageList.length > 0 && (
-                    <div
-                        style={{
-                            backgroundImage: `url(${imageList[currentImageIndex]})`,
-                            height: '100%',
-                            backgroundPosition: 'center',
-                            backgroundSize: 'cover'
-                        }}
-                        className="project-image-container"
-                    ></div>
-                )}
-            </button>
-        </>
-        // <>
-        //     {isSelected ? (
-        //         <div className="project-item-wrapper">
-        //             <div className="project-container">
-        //                 <button
-        //                     className="back-button"
-        //                     onClick={() => setIsSelected(false)}
-        //                 >
-        //                     <div className="caret rev"></div>
-        //                     Back
-        //                 </button>
-        //             </div>
-        //         </div>
-        //     ) : (
-        //         <button
-        //             onClick={() => {
-        //                 onFilteredListRef(imageList)
-        //                 setIsSelected(true)
-        //             }}
-        //             className="grid-item"
-        //         >
-        //             {imageList.length > 0 && (
-        //                 <div
-        //                     style={{
-        //                         backgroundImage: `url(${imageList[currentImageIndex]})`,
-        //                         height: '100%',
-        //                         backgroundPosition: 'center',
-        //                         backgroundSize: 'cover'
-        //                     }}
-        //                     className="project-image-container"
-        //                 ></div>
-        //             )}
-        //         </button>
-        //     )}
-        // </>
-    )
-}
+  const listOfProjects = [
+    'tjuvgods',
+    'kwitter',
+    'techware',
+    'rick',
+    'sweet',
+    'eyes',
+    'gomoku'
+  ];
 
-export default GridItem
+  const navigateToProject = async () => {
+    const selectedProject = await onFilteredListRef(imageList);
+    window.location.href = `/project/${selectedProject}`;
+  };
+
+  return (
+    <div className="grid-item" onClick={navigateToProject}>
+      {imageList.length > 0 && (
+        <div
+          style={{
+            backgroundImage: `url(${imageList[currentImageIndex]})`,
+            height: '100%',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
+          }}
+          className="project-image-container"
+        ></div>
+      )}
+    </div>
+  );
+};
+
+export default GridItem;
