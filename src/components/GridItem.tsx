@@ -30,17 +30,17 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
             setCurrentImageIndex(
                 (prevIndex) => (prevIndex + 1) % imageList.length
             )
-        }, 1000)
+        }, 4000)
 
         return () => clearInterval(intervalId)
     }, [imageList])
 
-    const message = () => {
-        console.log(imagesRef)
+    const message = (message: string[]) => {
+        console.log(message)
     }
 
     return (
-        <button onClick={() => message()} className="grid-item">
+        <button onClick={() => message(imageList)} className="grid-item">
             {imageList.length > 0 && (
                 <div
                     style={{
