@@ -6,6 +6,15 @@ interface GridItemProps {
 }
 
 const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
+    // boolean som kollar om det är en liten bild som syns
+    // eller om det är den stora som syns
+
+    // skapa en div om täcker hela skärmen + overfow: auto
+
+    // lägg till knapp som förstorar projektet
+
+    // knapp som förminskar projektet
+
     const [imageList, setImageList] = useState<string[]>([])
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 

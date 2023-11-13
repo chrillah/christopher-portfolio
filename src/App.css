@@ -66,7 +66,7 @@ a {
     text-decoration: none;
 }
 
-img{
+img {
     width: auto;
     max-height: 100%;
 }
@@ -562,33 +562,95 @@ button {
     background-image: url('./img/github-logo-thin.png');
 }
 
-
 /* project page */
 
-.grid-wrapper{
-
+.grid-wrapper {
 }
 
-.grid-container{
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    /* grid-template-rows: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 1px;
 }
 
-.grid-item{
+@media (min-width: 470px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 618px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 819px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1019px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (min-width: 1419px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-template-rows: 1fr;
+    }
+}
+
+
+.grid-item {
     border-radius: var(--border-radius);
-    /* background-color: blue; */
     height: 300px;
     width: auto;
     overflow: hidden;
 }
 
 .grid-item:last-child {
-    grid-column: span 3; /* eller span 3, span 4, etc. beroende på hur mycket plats du vill att den ska ta */
-  }
+    grid-column: span 2;
+}
 
-.project-image-container{
+@media (min-width: 618px) {
+    .grid-item:last-child {
+        grid-column: span 3;
+    }
+}
+
+@media (min-width: 1019px) {
+    .grid-item:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1068px) {
+    .grid-item:first-child {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1419px) {
+    /* .grid-item:second-child {
+        grid-column: span 2;
+    } */
+}
+
+.project-image-container {
     /* height: 100%;
     background-position: 'center center';
     background-size: 'cover'; */

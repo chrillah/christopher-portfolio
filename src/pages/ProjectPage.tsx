@@ -4,7 +4,14 @@ import { ref, StorageReference } from 'firebase/storage'
 import GridItem from '../components/GridItem'
 
 function ProjectPage() {
-    const imageListRefs: StorageReference[] = [
+
+
+    // fixa en json-fil med projektuppgifter
+
+    // koppla json-fil med rätt imageListRef
+
+    // objekt istället för lista/array
+    const imageListRefs: StorageReference[] | null = [
         ref(storage, 'images/tjuvgods/'),
         ref(storage, 'images/eyes/'),
         ref(storage, 'images/gomoku/'),
@@ -16,15 +23,19 @@ function ProjectPage() {
 
     return (
         <>
-            <div className="grid-wrapper">
-                <div className="grid-container">
-                    {imageListRefs.map((imagesRef, key) => (
-                        <GridItem key={key} imagesRef={imagesRef} />
-                    ))}
-                </div>
+          <div className="grid-wrapper">
+            <div className="grid-container">
+              {imageListRefs ? (
+                imageListRefs.map((imagesRef, key) => (
+                  <GridItem key={key} imagesRef={imagesRef} />
+                ))
+              ) : (
+                <div>No image references available</div>
+              )}
             </div>
+          </div>
         </>
-    )
+      );
 }
 
 export default ProjectPage
