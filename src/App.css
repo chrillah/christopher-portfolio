@@ -219,6 +219,18 @@ button {
     gap: 0.5rem;
 }
 
+.back-button {
+    position: fixed;
+    z-index: 999;
+    top: 35px;
+    left: 1rem;
+    color: var(--dark);
+    font-weight: bolder;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
 .arrow {
     fill: none;
     stroke: var(--dark);
@@ -232,6 +244,11 @@ button {
     border-bottom: var(--dark) 2px solid;
     border-right: var(--dark) 2px solid;
     transform-origin: top left;
+}
+
+.rev{
+    rotate: 135deg;
+    margin-top: .7rem;
 }
 
 .rotate-b,
@@ -696,12 +713,15 @@ button {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: scroll;
+    left: 8px;
+    right: 8px;
+    overflow: auto;
     background-color: aqua;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 100px auto;
+}
+
+.project-container{
+
 }

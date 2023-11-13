@@ -66,9 +66,14 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
         <>
             {isSelected ? (
                 <div className="project-item">
-                    <div className="top-container">
-                        <button onClick={()=> setIsSelected(false)}>KLICK</button>
-                    </div>
+                    <button
+                        className="back-button"
+                        onClick={() => setIsSelected(false)}
+                    >
+                        <div className="caret rev"></div>
+                        Back
+                    </button>
+                    <div className="project-container"></div>
                 </div>
             ) : (
                 <button
