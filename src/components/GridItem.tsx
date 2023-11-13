@@ -48,7 +48,7 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
     'tjuvgods',
     'kwitter',
     'techware',
-    'rick',
+    'rickandmorty',
     'sweet',
     'eyes',
     'gomoku'

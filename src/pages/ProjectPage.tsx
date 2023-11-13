@@ -1,6 +1,4 @@
-import { storage } from '../firebase'
-import { ref, StorageReference } from 'firebase/storage'
-
+import ImageListRefs from '../ImageListRefs'
 import GridItem from '../components/GridItem'
 
 function ProjectPage() {
@@ -9,22 +7,13 @@ function ProjectPage() {
     // koppla json-fil med rätt imageListRef
 
     // objekt istället för lista/array
-    const imageListRefs: StorageReference[] | null = [
-        ref(storage, 'images/eyes/'),
-        ref(storage, 'images/rickandmorty/'),
-        ref(storage, 'images/sweet/'),
-        ref(storage, 'images/tjuvgods/'),
-        ref(storage, 'images/gomoku/'),
-        ref(storage, 'images/kwitter/'),
-        ref(storage, 'images/techware/'),
-    ]
 
     return (
         <>
             <div className="grid-wrapper">
                 <div className="grid-container">
-                    {imageListRefs ? (
-                        imageListRefs.map((imagesRef, key) => (
+                    {ImageListRefs ? (
+                        ImageListRefs.map((imagesRef, key) => (
                             <GridItem key={key} imagesRef={imagesRef} />
                         ))
                     ) : (
