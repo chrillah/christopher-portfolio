@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import ContactBar from './components/ContactBar'
 import AboutMe from './pages/AboutMe'
 import ProjectPage from './pages/ProjectPage'
+import NotFound from './pages/NotFound'
 
 function App(): JSX.Element {
     return (
@@ -15,6 +16,7 @@ function App(): JSX.Element {
                 <Route path="/" element={<Hemma />} />
                 <Route path="/projects" element={<ProjectPage />} />
                 <Route path="/about" element={<AboutMe />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <ContactBar />
         </div>
