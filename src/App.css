@@ -697,12 +697,12 @@ button {
 .project-item-wrapper{
     max-width: var(--max-width);
     margin: 0 auto;
-    position: absolute;
+    /* position: absolute;
     top: 32px;
     bottom: 32px;
     left: 8px;
     right: 8px;
-    background-color: aqua;
+    background-color: aqua; */
 
     display: grid;
     grid-template-columns: 100px auto;
@@ -728,4 +728,14 @@ button {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+
+.image-wrapper{
+}
+
+.image-container{
+    height: 200px;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: scroll;
 }

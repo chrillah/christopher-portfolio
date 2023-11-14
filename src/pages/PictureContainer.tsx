@@ -25,9 +25,9 @@ const PictureContainer: React.FC<ImageListProps> = ({ imagesReference }) => {
   }, [imagesReference]);
 
   return (
-    <div>
+    <div className='image-wrapper'>
       {imageURLs.length > 0 ? (
-        <div>
+        <div className='image-container'>
           {imageURLs.map((url, index) => (
             <img key={index} src={url} alt={`Image ${index}`} />
           ))}
