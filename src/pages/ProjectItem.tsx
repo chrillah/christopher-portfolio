@@ -3,7 +3,6 @@ import { StorageReference } from '@firebase/storage'
 import PictureContainer from './PictureContainer'
 import imageListRefs from '../ImageListRefs'
 import myProjects from './myProjects'
-import { useState } from 'react'
 
 interface ProjectData {
     name: string;
@@ -15,10 +14,6 @@ interface ProjectData {
 
 const ProjectItem = () => {
     const { project } = useParams<{ project: string | '' }>()
-
-    const [projectInfo, setProjectInfo] = useState({});
-
-
 
     function findReferenceByPath(
         searchPath: string
@@ -35,11 +30,6 @@ const ProjectItem = () => {
 
     if (project) {
         projectRef = findReferenceByPath(project)
-        // if (projectRef) {
-        //     console.log('Found reference:', projectRef)
-        // } else {
-        //     console.log('Reference not found')
-        // }
     }
 
     const matchingProjectEntry = Object.entries(myProjects).find(
@@ -52,6 +42,7 @@ const ProjectItem = () => {
 
       if (Object.keys(projectsToRender).length > 0) {
         const [projectKey, projectData] = Object.entries(projectsToRender)[0];
+        console.log(projectKey)
         console.log(`${projectData.name}`);
         console.log(`${projectData.description}`);
         console.log(`${projectData.linkToWeb}`);
