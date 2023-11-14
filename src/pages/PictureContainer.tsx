@@ -1,42 +1,42 @@
-import { StorageReference, listAll, getDownloadURL } from 'firebase/storage'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react';
+import { getDownloadURL, listAll, StorageReference } from 'firebase/storage';
 
-interface PictureProps {
-    imagesRef: StorageReference
-    project: string
+interface ImageListProps {
+  imagesReference: StorageReference;
 }
 
-const PictureContainer: React.FC<PictureProps> = ({ imagesRef, project }) => {
-    const [imageListRef, setImageListRef] = useState<string[] | ''>([]);
+const PictureContainer: React.FC<ImageListProps> = ({ imagesReference }) => {
+  const [imageURLs, setImageURLs] = useState<string[]>([]);
 
-    useEffect(() => {
-        const fetchAllImages = async () => {
-            try {
-                const resp = await listAll(imagesRef)
-                const urls = await Promise.all(
-                    resp.items.map(async (item) => await getDownloadURL(item))
-                )
-                const projectImageListRef = await onFilteredListRef(urls, project)
-                console.log(projectImageListRef)
-                setImageListRef(projectImageListRef)
-            } catch (error) {
-                console.error('Error loading images:', error)
-            }
-        }
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const resp = await listAll(imagesReference);
+        const urls = await Promise.all(
+          resp.items.map(async (itemRef) => await getDownloadURL(itemRef))
+        );
+        setImageURLs(urls);
+      } catch (error) {
+        console.error('Error loading images:', error);
+      }
+    };
 
-        fetchAllImages()
-    }, [imagesRef])
+    fetchImages();
+  }, [imagesReference]);
 
-    const onFilteredListRef = async (urlParts: string[], project: string) => {
-        const filteredArray = urlParts.filter((item) => item.includes(project))
-        if (filteredArray.length > 0) {
-            console.log(`IN PICTURE CONTAINER ${project}:`, filteredArray)
-            return filteredArray
-        }
-        return ''
-    }
+  return (
+    <div>
+      {imageURLs.length > 0 ? (
+        <div>
+          {imageURLs.map((url, index) => (
+            <img key={index} src={url} alt={`Image ${index}`} />
+          ))}
+        </div>
+      ) : (
+        <p>No images found</p>
+      )}
+    </div>
+  );
+};
 
-    return <div>{imageListRef ? <p>Ej tom</p> : <>{imageListRef}</>}</div>
-}
-
-export default PictureContainer
+export default PictureContainer;
