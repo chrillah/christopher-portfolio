@@ -9,7 +9,7 @@
     --light-latte-1: #f2f2f2;
 
     --dark: #000000;
-    --light: var(--light-pink-1);
+    --light: var(--light-viol-2);
 
     --border-weight: 1px;
     --border-radius: 5px;
@@ -101,7 +101,7 @@ button {
 
 .black-cover-nav,
 .black-cover-footer {
-    z-index: 999;
+    z-index: 900;
     max-width: var(--max-width);
     margin: 0 auto;
     background-color: var(--dark);
@@ -113,7 +113,7 @@ button {
 
 .transparent-cover-footer,
 .transparent-cover-nav {
-    z-index: 999;
+    z-index: 900;
     max-width: var(--max-width);
     margin: 0 auto;
     border-radius: var(--border-radius);
@@ -210,13 +210,27 @@ button {
     font-size: 1rem;
 }
 
+.link-to-button{
+    margin-left: auto;
+    margin-top: auto;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    position: relative;
+    z-index: 990;
+}
+
+.on-site-button{
+    padding: 1rem 1rem;
+}
+
+.link-to-button,
 .on-site-button {
     color: var(--dark);
     font-weight: bolder;
-    padding: 1rem 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: .9rem;
 }
 .arrow {
     fill: none;
@@ -233,10 +247,6 @@ button {
     transform-origin: top left;
 }
 
-.rev{
-    rotate: 135deg;
-    margin-top: .7rem;
-}
 
 .rotate-b,
 .rotate,
@@ -694,48 +704,142 @@ button {
     background-size: 'cover'; */
 }
 
-.project-item-wrapper{
+.project-item-wrapper {
+    background-color: #e2dbff;
     max-width: var(--max-width);
     margin: 0 auto;
-    /* position: absolute;
-    top: 32px;
-    bottom: 32px;
-    left: 8px;
-    right: 8px;
-    background-color: aqua; */
-
-    display: grid;
-    grid-template-columns: 100px auto;
+    margin-top: 32px;
 }
 
 .back-button {
-    /* position: fixed;
-    z-index: 999;
-    top: 35px;
-    left: 1rem; */
-    position: relative;
-    z-index: 999;
-    margin-top: 50px;
     color: var(--dark);
     font-weight: bolder;
-    padding: 1rem 1rem;
+    padding: .4rem .6rem;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 990;
+}
+
+.back-button p {
+    font-size: .9rem;
+}
+
+.rev {
+    rotate: 135deg;
 }
 
 
-.project-container{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.project-container {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
 }
 
 .image-wrapper{
+    overflow-x: auto;
+    /* overflow-x: scroll; */
 }
 
-.image-container{
-    height: 200px;
+.image-container::-webkit-scrollbar {
+    background: transparent;
+}
+
+.image-container::-webkit-scrollbar-thumb {
+    background: var(--light);
+    border-radius: calc(var(--border-radius) * 2);
+}
+
+.image-container {
+    display: flex;
+    gap: 1px;
+    scroll-snap-type: x mandatory;
+    background-color: var(--border-color);
+}
+
+.image-container img {
+    flex: 0 0 auto;
+    height: 400px;
+    max-height: 700px;
+    scroll-snap-align: start;
+}
+
+@media (min-width: 440px) {
+
+    .image-container img {
+        height: 450px;
+    }
+}
+
+@media (min-width: 662px) {
+    .image-wrapper{
+        overflow-x: none;
+        /* overflow-x: scroll; */
+    }
+    .image-container img {
+        height: none;
+        overflow-x: auto;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.project-info-wrapper{
+    border-radius: var(--border-radius);
     display: grid;
-    grid-auto-flow: column;
-    overflow-x: scroll;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 22px;
+
+}
+
+@media (min-width: 905px) {
+    .project-info-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.project-info-container-1,
+.project-info-container-2{
+    display: grid;
+    padding: .5rem;
+}
+
+.project-info-container-1{
+    border-right: none;
+    border-bottom: var(--border-weight) var(--border-color) solid;
+}
+
+@media (min-width: 905px) {
+    .project-info-container-1{
+        border-bottom: none;
+        border-right: var(--border-weight) var(--border-color) solid;
+    }
+}
+
+.project-name{
+    font-weight: 600;
+    padding-bottom: .5rem;
+}
+
+.project-description{
+    padding-bottom: .5rem;
+    font-size: .8rem;
+    max-width: 500px;
+}
+
+.technology-header{
+    font-weight: 800;
+    font-size: .8rem;
+    padding-bottom: .5rem;
+}
+
+.technology-list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.technology-list p {
+    font-weight: 800;
 }
