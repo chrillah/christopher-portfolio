@@ -1,64 +1,42 @@
-import { Link, useParams } from 'react-router-dom';
-// import ImageListRefs from '../ImageListRefs';
+import { Link, useParams } from 'react-router-dom'
+import PictureContainer from './PictureContainer'
+import ImageListRefs from '../ImageListRefs'
 
-const ProjectItem = () =>{
-    const { project } = useParams<{ project: string }>();
-
-
-    const test = () => {
-    console.log(project)
+const ProjectItem = () => {
+    const { project } = useParams<{ project: string }>()
+    const listOfPorjects = {
+        tjuvgods : {
+            description : '',
+            linkToProject: '',
+            linkToGitHub : '',
+            listOfTech: [
+                ''
+            ]
+        }
     }
 
-    test();
+
     return (
         <div className="project-item-wrapper">
             <div className="project-container">
-                <Link to={'/projects'}
+                <Link
+                    to={'/projects'}
                     className="back-button"
                     onClick={() => console.log('back')}
                 >
                     <div className="caret rev"></div>
-                    {project}
+                    Back to Projects
                 </Link>
             </div>
+            {ImageListRefs ? (
+                        ImageListRefs.map((imagesRef, key) => (
+                            <PictureContainer key={key} imagesRef={imagesRef} project={project}/>
+                        ))
+                    ) : (
+                        <span className="loader"></span>
+                    )}
         </div>
     )
 }
-
-        // <>
-        //     {isSelected ? (
-        //         <div className="project-item-wrapper">
-        //             <div className="project-container">
-        //                 <button
-        //                     className="back-button"
-        //                     onClick={() => setIsSelected(false)}
-        //                 >
-        //                     <div className="caret rev"></div>
-        //                     Back
-        //                 </button>
-        //             </div>
-        //         </div>
-        //     ) : (
-        //         <button
-        //             onClick={() => {
-        //                 onFilteredListRef(imageList)
-        //                 setIsSelected(true)
-        //             }}
-        //             className="grid-item"
-        //         >
-        //             {imageList.length > 0 && (
-        //                 <div
-        //                     style={{
-        //                         backgroundImage: `url(${imageList[currentImageIndex]})`,
-        //                         height: '100%',
-        //                         backgroundPosition: 'center',
-        //                         backgroundSize: 'cover'
-        //                     }}
-        //                     className="project-image-container"
-        //                 ></div>
-        //             )}
-        //         </button>
-        //     )}
-        // </>
 
 export default ProjectItem

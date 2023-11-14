@@ -7,7 +7,6 @@ interface GridItemProps {
 }
 
 const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
-    // let selectedProject: string = ''
     const [imageList, setImageList] = useState<string[]>([])
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
     const navigate = useNavigate();
@@ -63,7 +62,6 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
     const navigateToProject = async () => {
        const selectedProject = await onFilteredListRef(imageList)
        navigate(`/project/${selectedProject}`);
-        // window.location.href = `/project/${selectedProject}`;
     }
 
     return (

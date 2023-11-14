@@ -698,8 +698,8 @@ button {
     max-width: var(--max-width);
     margin: 0 auto;
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 32px;
+    bottom: 32px;
     left: 8px;
     right: 8px;
     background-color: aqua;
@@ -725,8 +725,6 @@ button {
 
 
 .project-container{
-    overflow: scroll;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
