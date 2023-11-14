@@ -271,6 +271,8 @@ button {
     rotate: -90deg;
     transition: rotate 100ms ease-out;
 }
+
+.menu-home,
 .menu-open,
 .menu-closed {
     display: flex;
@@ -278,12 +280,7 @@ button {
     justify-content: center;
 }
 
-@media (min-width: 500px) {
-    .menu-open,
-    .menu-closed {
-    }
-}
-
+.menu-home,
 .menu-open {
     height: 100vh;
     transition: height 200ms ease-in;
@@ -293,6 +290,11 @@ button {
     overflow: hidden;
     height: 0;
     transition: height 150ms ease-in-out;
+}
+
+.menu-home{
+    border-radius: var(--border-radius);
+    background-color: var(--light);
 }
 
 .link-container {

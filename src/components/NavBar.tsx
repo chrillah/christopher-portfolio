@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation  } from 'react-router-dom'
 
 function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false)
     const menuRef = useRef<HTMLDivElement>(null)
+    const location = useLocation();
+    const shouldNotBeVisible = location.pathname === '/';
 
     const closeMenu = () => {
         setMenuOpen(false)
@@ -24,6 +26,10 @@ function NavBar() {
             document.removeEventListener('mousedown', handleClickOutside)
         }
     }, [])
+
+    if (shouldNotBeVisible) {
+        return null;
+    }
 
     return (
         <>
