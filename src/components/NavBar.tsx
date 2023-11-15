@@ -37,13 +37,14 @@ function NavBar() {
             <div className="transparent-cover-nav"></div>
             <nav ref={menuRef} className="nav-bar-wrapper">
                 <div className="nav-bar-container">
-                    <Link
+                    <div></div>
+                    {/* <Link
                         onClick={() => setMenuOpen(false)}
                         className="link-logo"
                         to="/"
                     >
                         About
-                    </Link>
+                    </Link> */}
                     <button
                         className="on-site-button"
                         onClick={() => setMenuOpen(!menuOpen)}

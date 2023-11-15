@@ -48,18 +48,22 @@ function ContactBar() {
                     <ul className="contact-list">
                         <li className="contact-item">
                             <a href="tel:+46736703219">
-                                <div id="mobile-icon"></div>
+                                {/* <div id="mobile-icon"></div> */}
                                 <p className="contact-info">+46 736 70 32 19</p>
+                                <div className="no-rotate">
+                                    <div className="caret white"></div>
+                                </div>
                             </a>
                         </li>
                         <li className="contact-item">
-                            <a
-                                href="mailto:christopher.ronnberg@hotmail.com"
-                            >
-                                <div id="mail-icon"></div>
+                            <a href="mailto:christopher.ronnberg@hotmail.com">
+                                {/* <div id="mail-icon"></div> */}
                                 <p className="contact-info">
                                     christopher.ronnberg @hotmail.com
                                 </p>
+                                <div className="no-rotate">
+                                    <div className="caret white"></div>
+                                </div>
                             </a>
                         </li>
                         <li className="contact-item">
@@ -67,11 +71,14 @@ function ContactBar() {
                                 href="https://www.linkedin.com/in/christopher-r%C3%B6nnberg/"
                                 target="blanc"
                             >
-                                <div id="linkedin-icon"></div>
+                                {/* <div id="linkedin-icon"></div> */}
                                 <p className="contact-info">
                                     https://www.linkedin.com/in
                                     /christopher-rönnberg/
                                 </p>
+                                <div className="no-rotate">
+                                    <div className="caret white"></div>
+                                </div>
                             </a>
                         </li>
                         <li className="contact-item">
@@ -79,10 +86,13 @@ function ContactBar() {
                                 href="https://github.com/chrillah"
                                 target="blanc"
                             >
-                                <div id="github-icon"></div>
+                                {/* <div id="github-icon"></div> */}
                                 <p className="contact-info">
                                     https://github.com/chrillah
                                 </p>
+                                <div className="no-rotate">
+                                    <div className="caret white"></div>
+                                </div>
                             </a>
                         </li>
                     </ul>

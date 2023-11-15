@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { StorageReference } from '@firebase/storage'
 import PictureContainer from './PictureContainer'
 import imageListRefs from '../ImageListRefs'
-import myProjects from './myProjects'
+import myProjects from '../myProjects'
 import { useEffect, useState } from 'react'
 
 interface ProjectData {

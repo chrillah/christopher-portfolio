@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
     --dark-viol-1: #19073f;
     --light-viol-1: #eadcf3;
@@ -5,11 +7,12 @@
 
     --light-pink-1: #e4dbdb;
 
+    --light-grey-1: #CDCDC8;
     --dark-brown-1: #26231c;
     --light-latte-1: #f2f2f2;
 
     --dark: #000000;
-    --light: var(--light-viol-2);
+    --light: var(--light-grey-1);
 
     --border-weight: 1px;
     --border-radius: 5px;
@@ -19,10 +22,16 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Anonymous Pro', monospace; */
+    font-family: 'Space Mono', monospace;
     box-sizing: border-box;
     background-color: var(--border-color);
     /* overflow: hidden; */
+}
+
+button{
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
 }
 
 ul,
@@ -559,9 +568,19 @@ button {
     }
 }
 
+.contact-item{
+    border: var(--light) var(--border-weight) solid;
+    border-radius: calc(var(--border-radius) *2);
+}
+
 .contact-item a {
     display: grid;
     grid-template-columns: 60px auto;
+}
+
+.white{
+    border-bottom: var(--light) 2px solid;
+    border-right: var(--light) 2px solid;
 }
 
 /* @media (max-width: 499px) {
@@ -706,11 +725,32 @@ button {
     background-size: 'cover'; */
 }
 
+/* .fade{
+    animation-name: fade;
+    animation-duration: 8s;
+    animation-fill-mode: both ;
+}
+
+@keyframes fade{
+
+    0%{
+        opacity: 0;
+    }
+    50%{
+         opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+} */
+
 .project-item-wrapper {
-    background-color: #e2dbff;
+    background-color: var(--light);
     max-width: var(--max-width);
     margin: 0 auto;
     margin-top: 32px;
+    min-height: 100vh;
 }
 
 .back-button {

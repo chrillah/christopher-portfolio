@@ -6,7 +6,7 @@ interface GridItemProps {
     imagesRef: StorageReference
 }
 
-const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
+const GridItem2: React.FC<GridItemProps> = ({ imagesRef }) => {
     const [imageList, setImageList] = useState<string[]>([])
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
     const navigate = useNavigate();
@@ -84,4 +84,4 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
     )
 }
 
-export default GridItem
+export default GridItem2
