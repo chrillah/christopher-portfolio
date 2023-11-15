@@ -8,7 +8,8 @@ interface GridItemProps {
 
 const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
     const [imageList, setImageList] = useState<string[]>([])
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    // const [currentImageIndex, setCurrentImageIndex] = useState(2)
+    const currentImageIndex = 2;
     const navigate = useNavigate();
     useEffect(() => {
         const fetchImages = async () => {
@@ -26,15 +27,15 @@ const GridItem: React.FC<GridItemProps> = ({ imagesRef }) => {
         fetchImages()
     }, [imagesRef])
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentImageIndex(
-                (prevIndex) => (prevIndex + 1) % imageList.length
-            )
-        }, 8000)
+    // useEffect(() => {
+    //     const intervalId = setInterval(() => {
+    //         setCurrentImageIndex(
+    //             (prevIndex) => (prevIndex + 1) % imageList.length
+    //         )
+    //     }, 8000)
 
-        return () => clearInterval(intervalId)
-    }, [imageList])
+    //     return () => clearInterval(intervalId)
+    // }, [imageList])
 
     const onFilteredListRef = async (urlParts: string[]) => {
         for (const project of listOfProjects) {
