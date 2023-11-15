@@ -45,45 +45,38 @@ function ContactBar() {
                 <div
                     className={contactOpen ? 'contact-open' : 'contact-closed'}
                 >
-                    <ul className="contact-list">
-                        <li className="contact-item">
-                            <a href="tel:+46736703219">
-                                <p className="contact-info">+46 736 70 32 19</p>
-                                {/* <div className="caret white regular"></div> */}
-                            </a>
-                        </li>
-                        <li className="contact-item">
-                            <a href="mailto:christopher.ronnberg@hotmail.com">
-                                <p className="contact-info">
-                                    christopher.ronnberg @hotmail.com
-                                </p>
-                                {/* <div className="caret white regular"></div> */}
-                            </a>
-                        </li>
-                        <li className="contact-item">
-                            <a
-                                href="https://www.linkedin.com/in/christopher-r%C3%B6nnberg/"
-                                target="blanc"
-                            >
-                                <p className="contact-info">
-                                    https://www.linkedin.com/in
-                                    /christopher-rönnberg/
-                                </p>
-                                {/* <div className="caret white regular"></div> */}
-                            </a>
-                        </li>
-                        <li className="contact-item">
-                            <a
-                                href="https://github.com/chrillah"
-                                target="blanc"
-                            >
-                                <p className="contact-info">
-                                    https://github.com/chrillah
-                                </p>
-                                {/* <div className="caret white regular"></div> */}
-                            </a>
-                        </li>
-                    </ul>
+                    <div className="contact-list">
+                        <a className="contact-item" href="tel:+46736703219">
+                            <p className="contact-info">+46 736 70 32 19</p>
+                        </a>
+                        <a
+                            className="contact-item"
+                            href="mailto:christopher.ronnberg@hotmail.com"
+                        >
+                            <p className="contact-info">
+                                christopher.ronnberg @hotmail.com
+                            </p>
+                        </a>
+                        <a
+                            className="contact-item"
+                            href="https://www.linkedin.com/in/christopher-r%C3%B6nnberg/"
+                            target="blanc"
+                        >
+                            <p className="contact-info">
+                                https://www.linkedin.com/in
+                                /christopher-rönnberg/
+                            </p>
+                        </a>
+                        <a
+                            className="contact-item"
+                            href="https://github.com/chrillah"
+                            target="blanc"
+                        >
+                            <p className="contact-info">
+                                https://github.com/chrillah
+                            </p>
+                        </a>
+                    </div>
                 </div>
             </footer>
         </>
