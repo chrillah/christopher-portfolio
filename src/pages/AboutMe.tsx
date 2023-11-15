@@ -4,22 +4,20 @@ function AboutMe() {
         <div className="about-wrapper">
             {/* första man ser */}
             <div className="about-container-1">
-                <div className="about-item-1">
+                <div className="about-item-1" >
                     <h1 className="big-title">About me</h1>
                 </div>
 
                 <div className="about-item-2">
                     <div className="about-item-1-group">
+                    <div className="profile-pic-container">
+                        </div>
                         <p className="presentation-text">
                             By combining my knowledge of UX, graphic design, and
                             frontend development, I can create innovative and
                             user-friendly digital products that not only look
                             great but also function well for users.
                         </p>
-
-                        <div className="img-container">
-                            <img src="" alt="" />
-                        </div>
                     </div>
                 </div>
             </div>

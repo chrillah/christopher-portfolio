@@ -5,6 +5,8 @@
     --light-viol-1: #eadcf3;
     --light-viol-2: #e2dbff;
 
+    --dark-viol-1: #532F93;
+
     --light-pink-1: #e4dbdb;
 
     --light-grey-1: #cdcdc8;
@@ -19,14 +21,29 @@
     --dark: var(--black-1);
     --light: var(--light-grey-2);
 
-    --button-color-bg: var(--yellow-1);
-    --button-color: var(--dark);
+    --button-color-bg: var(--dark-viol-1);
+    --button-color: var(--light);
 
     --border-weight: 1px;
     --border-radius: 5px;
     --max-width: 1666px;
     --border-color: var(--dark);
     --container-color: var(--light);
+
+    --radial-gradient-1: radial-gradient(
+        circle,
+        blue 10%,
+        var(--light-grey-2) 60%
+    );
+
+    --gradient-1: linear-gradient(
+        45deg,
+        var(--light-viol-1),
+        var(--light-pink-1),
+        var(--light-viol-2),
+        var(--light-grey-2),
+        var(--light-viol-2)
+    );
 }
 
 body {
@@ -34,6 +51,7 @@ body {
     font-family: 'Space Mono', monospace;
     box-sizing: border-box;
     background-color: var(--border-color);
+
     /* overflow: hidden; */
 }
 
@@ -330,11 +348,33 @@ button {
     max-width: var(--max-width);
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 7px;
+    right: 7px;
     bottom: 0;
     border-radius: var(--border-radius);
-    background-color: var(--light);
+    /* background-position: center;
+    background-size: 100%; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: var(--gradient-1);
+    animation: gradient-movement 5s infinite alternate;
+    /* background-color: var(--light); */
+}
+
+.animated-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: var(--gradient-1);
+    animation: gradient-movement 5s infinite alternate;
+}
+
+@keyframes gradient-movement {
+    0% {
+        background-size: 800%;
+    }
+    100% {
+        background-size: 100%;
+    }
 }
 
 .link-container {
@@ -447,9 +487,38 @@ button {
     }
 }
 
+.about-item-1-group{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-pic-container{
+    background-color: var(--dark-viol-1);
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+}
+
+@media (min-width: 425px) {
+    .profile-pic-container{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-pic-container{
+        width: 200px;
+        height: 200px;
+    }
+}
+
 .presentation-text {
-    padding: 1rem;
-    font-size: 20px;
+    font-size: 18px;
     max-width: 400px;
 }
 
