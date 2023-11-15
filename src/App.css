@@ -12,6 +12,7 @@
     --light-viol-2: #e2dbff;
 
     --dark-viol-1: #532F93;
+    --viol-1: #9E9BF2;
 
     --light-pink-1: #e4dbdb;
 
@@ -22,13 +23,15 @@
 
     --yellow-1: #ffed31;
 
+    --peach-1: #F3A67A;
+
     --black-1: #2e2e2e;
 
     --dark: var(--black-1);
     --light: var(--light-grey-2);
 
-    --button-color-bg: var(--dark-viol-1);
-    --button-color: var(--light);
+    --button-color-bg: var(--peach-1);
+    --button-color: var(--dark);
 
     --border-weight: 1px;
     --border-radius: 5px;
@@ -453,7 +456,7 @@ button {
 }
 
 .about-container-1 {
-    height: 80vh;
+    /* height: 80vh; */
     margin-top: 23px;
     /* background-color: var(--dark); */
     display: grid;
@@ -526,8 +529,8 @@ button {
 .hero-name{
     font-weight: 900;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: .5rem;
+    left: .5rem;
 }
 .hero-title-3{
     position: absolute;
@@ -610,7 +613,7 @@ button {
 }
 
 .profile-pic-container{
-    background-color: var(--dark-viol-1);
+    background-color: var(--peach-1);
     border-radius: 100px;
     width: 100px;
     height: 100px;
