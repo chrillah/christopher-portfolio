@@ -453,7 +453,7 @@ button {
 }
 
 .about-container-1 {
-    height: 90vh;
+    height: 80vh;
     margin-top: 23px;
     /* background-color: var(--dark); */
     display: grid;
@@ -633,6 +633,7 @@ button {
 .presentation-text {
     font-size: 18px;
     max-width: 400px;
+    padding-bottom: 1.5rem;
 }
 
 .education-item-container {
