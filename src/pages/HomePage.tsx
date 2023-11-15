@@ -13,7 +13,7 @@ function HomePage() {
             <ul className="link-container">
                 <li>
                     <Link className="link-button" to="/about">
-                        About
+                        About me
                     </Link>
                 </li>
                 <li>

@@ -793,7 +793,7 @@ button {
     justify-content: center;
     align-items: center;
     border: var(--light) var(--border-weight) solid;
-    border-radius: calc(var(--border-radius) * 2);
+    border-radius: calc(var(--border-radius) * 10);
     transition: all ease-in-out 200ms;
     box-shadow: 0px 0px 0px 0px var(--light);
     -webkit-box-shadow: 0px 0px 0px 0px var(--light);

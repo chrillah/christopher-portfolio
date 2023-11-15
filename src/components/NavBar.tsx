@@ -62,7 +62,7 @@ function NavBar() {
                                 className="link-button"
                                 to="/about"
                             >
-                                About
+                                About me
                             </Link>
                         </li>
                         <li>
