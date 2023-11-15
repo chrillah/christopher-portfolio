@@ -63,12 +63,9 @@
 }
 
 body {
-    /* font-family: 'Anonymous Pro', monospace; */
     font-family: 'Space Mono', monospace;
     box-sizing: border-box;
     background-color: var(--border-color);
-
-    /* overflow: hidden; */
 }
 
 button {
@@ -143,7 +140,6 @@ button {
     right: 7px;
     border: solid var(--border-color) var(--border-weight);
     border-radius: var(--border-radius);
-    /* width: 100%; */
     position: fixed;
     background-color: var(--container-color);
     display: grid;
@@ -970,12 +966,14 @@ button {
 }
 
 .image-wrapper {
+    border-top: var(--border-weight) var(--border-color) solid;
+    border-bottom: var(--border-weight) var(--border-color) solid;
     overflow-x: auto;
     /* overflow-x: scroll; */
 }
 
 .image-container::-webkit-scrollbar {
-    background: transparent;
+    background: var(--light);
 }
 
 .image-container::-webkit-scrollbar-thumb {

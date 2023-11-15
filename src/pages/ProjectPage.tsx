@@ -2,12 +2,6 @@ import ImageListRefs from '../ImageListRefs'
 import GridItem from '../components/GridItem'
 
 function ProjectPage() {
-    // fixa en json-fil med projektuppgifter
-
-    // koppla json-fil med rätt imageListRef
-
-    // objekt istället för lista/array
-
     return (
         <>
             <div className="grid-wrapper">

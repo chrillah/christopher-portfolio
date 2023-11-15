@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { StorageReference } from '@firebase/storage'
-import PictureContainer from './PictureContainer'
+import PictureContainer from '../components/PictureContainer'
 import imageListRefs from '../ImageListRefs'
 import myProjects from '../myProjects'
 import { useEffect, useState } from 'react'
@@ -47,48 +47,6 @@ const ProjectItem = () => {
             console.log('Inget matchande projekt hittades.')
         }
     }, [project])
-    // const [projectName, setProjectName] = useState('');
-    // const [description, setDescription] = useState('');
-    // const [linkToWeb, setLinkToWeb] = useState('');
-    // const [linkToGithub, setLinkToGithub] = useState('');
-    // const [technology, setTechnology] = useState([]);
-
-    // function findReferenceByPath(
-    //     searchPath: string
-    // ): StorageReference | undefined {
-    //     if (imageListRefs) {
-    //         return imageListRefs.find((ref) =>
-    //             ref.fullPath.includes(searchPath)
-    //         )
-    //     }
-    //     return undefined
-    // }
-
-    // let projectRef: StorageReference | undefined = undefined
-
-    // if (project) {
-    //     projectRef = findReferenceByPath(project)
-    // }
-
-    // const matchingProjectEntry = Object.entries(myProjects).find(
-    //     ([key]) => key === project
-    // )
-
-    // const projectsToRender: Record<string, ProjectData> = matchingProjectEntry
-    //     ? { [matchingProjectEntry[0]]: matchingProjectEntry[1] }
-    //     : {}
-
-    // if (Object.keys(projectsToRender).length > 0) {
-    //     const [projectKey, projectData] = Object.entries(projectsToRender)[0]
-    //     console.log(projectKey)
-    //     console.log(`${projectData.name}`)
-    //     console.log(`${projectData.description}`)
-    //     console.log(`${projectData.linkToWeb}`)
-    //     console.log(`${projectData.linkToGitHub}`)
-    //     console.log(`${projectData.technology}`)
-    // } else {
-    //     console.log('Inget matchande projekt hittades.')
-    // }
 
     return (
         <div className="project-item-wrapper">
@@ -130,9 +88,7 @@ const ProjectItem = () => {
                                         </a>
                                     </>
                                 ) : (
-                                    <>
-                                        {/* <p className="no-link">No webpage</p> */}
-                                    </>
+                                    <></>
                                 )}
                             </div>
                             <div className="project-info-container-2">

@@ -4,12 +4,8 @@ function HomePage() {
     const year = new Date()
     return (
         <div className="menu-home">
-            {/* <h1 className='hero-title-1'>Christopher Rönnberg</h1>
-            <h1 className='hero-title-2'>{year.getFullYear()} Portfolio</h1> */}
-
             <p className="hero-name">Christopher Rönnberg</p>
             <p className="hero-title-3">{year.getFullYear()} Portfolio</p>
-            {/* <div className="gradient-bg"></div> */}
             <ul className="link-container">
                 <li>
                     <Link className="link-button" to="/about">
