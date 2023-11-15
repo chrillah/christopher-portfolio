@@ -530,12 +530,14 @@ button {
 }
 
 .hero-title{
+    top: 1rem;
     position: absolute;
-    line-height: 7.4rem;
+    line-height: 7rem;
     padding: 1rem;
-    font-size: 7rem;
+    font-size: 5rem;
     font-family: var(--display-font);
     word-break: break-all;
+    font-weight: 100;
 }
 
 @media (min-width: 485px){
