@@ -115,7 +115,7 @@ const ProjectItem = () => {
                             </div>
                         </>
                     ) : (
-                        <>nope</>
+                        <></>
                     )}
                 </div>
             </div>
