@@ -42,7 +42,7 @@ function NavBar() {
                         className="link-logo"
                         to="/"
                     >
-                        CR
+                        {/* CR */}
                     </Link>
                     <button
                         className="on-site-button"

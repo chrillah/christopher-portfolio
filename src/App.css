@@ -547,6 +547,12 @@ button {
 }
 
 .link-logo{
+    background-image: url('./img/ch-logo.png');
+    margin-left: .5rem;
+    width: 40px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     padding: 1rem .5rem;
     font-weight: bolder;
     font-family: var(--display-font);
@@ -668,7 +674,7 @@ button {
 }
 
 .education-item-container {
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     display: grid;
     grid-template-rows: 50px 1fr;
     overflow-x: auto;
@@ -701,7 +707,7 @@ button {
 }
 
 .about-container-3 {
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     display: grid;
     grid-template-rows: 50px auto;
     margin-bottom: 23px;
@@ -1012,12 +1018,12 @@ button {
     /* overflow-x: scroll; */
 }
 
-.image-container::-webkit-scrollbar {
-    background: var(--light);
+.image-wrapper::-webkit-scrollbar {
+    background: transparent;
 }
 
-.image-container::-webkit-scrollbar-thumb {
-    background: var(--light);
+.image-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
     border-radius: calc(var(--border-radius) * 2);
 }
 
