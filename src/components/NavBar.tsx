@@ -39,10 +39,11 @@ function NavBar() {
                 <div className="nav-bar-container">
                     <Link
                         onClick={() => setMenuOpen(false)}
-                        className="link-logo"
+                        // className="link-logo"
+                        className='nav-bar-logo'
                         to="/"
                     >
-                        {/* CR */}
+                        CR
                     </Link>
                     <button
                         className="on-site-button"
