@@ -560,7 +560,7 @@ button {
     margin-left: 0.5rem;
 }
 
-.logo{
+.logo {
     display: grid;
     grid-template-columns: 10px auto;
     font-weight: 900;
@@ -572,30 +572,34 @@ button {
 .hero-name {
     word-wrap: normal;
     width: 500px;
-    animation: presentation;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    overflow: hidden;
 }
 
-/* @keyframes presentation {
+.animated-c {
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    animation: c-presentation;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes c-presentation {
     0% {
-        width: 0;
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
     }
     100% {
-        width: 500px;
+        opacity: 0;
     }
-} */
-
-.animated-c{
-position: absolute;
-left: 0px;
 }
-.animated-r{
+
+.animated-r {
     opacity: 0;
     padding-left: 107px;
     animation: r-presentation;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-iteration-count: 1;
 }
 
@@ -603,7 +607,7 @@ left: 0px;
     0% {
         padding-left: 0px;
     }
-    50%{
+    80% {
         opacity: 1;
     }
     100% {
@@ -612,7 +616,7 @@ left: 0px;
     }
 }
 
-.hidden-div{
+.hidden-div {
     opacity: 0;
     position: absolute;
     top: 0.1rem;
@@ -630,7 +634,7 @@ left: 0px;
         opacity: 1;
         padding-left: 0px;
     }
-    50%{
+    50% {
         opacity: 1;
     }
     100% {
