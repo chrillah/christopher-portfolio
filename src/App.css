@@ -261,7 +261,7 @@ button {
     background-size: 500%;
     background-position: top;
     color: #000000;
-    /* color: var(--button-color); */
+    color: var(--button-color);
     border-radius: calc(var(--border-radius) * 10);
     padding: 1rem 2rem;
     font-weight: bold;
@@ -287,11 +287,11 @@ button {
     -moz-box-shadow: 0px 0px 0px 0px var(--dark);
 }
 
-.invert-color {
+/* .invert-color {
     color: #000000;
     filter: invert(1);
     mix-blend-mode: difference;
-}
+} */
 
 @keyframes movement {
     0% {
@@ -1039,7 +1039,7 @@ button {
 }
 
 .image-wrapper {
-    /* border-top: var(--border-weight) var(--border-color) solid; */
+    border-top: var(--border-weight) var(--border-color) solid;
     border-bottom: var(--border-weight) var(--border-color) solid;
     overflow-x: auto;
     /* overflow-x: scroll; */

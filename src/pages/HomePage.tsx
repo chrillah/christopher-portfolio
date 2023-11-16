@@ -14,12 +14,12 @@ function HomePage() {
             <ul className="link-container add-pad">
                 <li>
                     <Link className="link-button" to="/about">
-                        <p className="invert-color">About me</p>
+                        <p>About me</p>
                     </Link>
                 </li>
                 <li>
                     <Link className="link-button" to="/projects">
-                        <p className="invert-color">Projects</p>
+                        <p>Projects</p>
                     </Link>
                 </li>
             </ul>
