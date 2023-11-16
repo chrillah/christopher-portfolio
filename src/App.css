@@ -448,7 +448,7 @@ button {
 }
 
 .add-pad {
-    padding-top: 54px;
+    /* padding-top: 54px; */
 }
 
 @media (min-width: 375px) {
