@@ -60,6 +60,15 @@
         var(--light-grey-2),
         var(--light-viol-2)
     );
+
+    --gradient-2: linear-gradient(
+        45deg,
+        var(--dark-viol-1),
+        var(--light-viol-1),
+        var(--peach-1),
+        var(--yellow-1),
+        var(--light-viol-2)
+    );
 }
 
 body {
@@ -249,7 +258,10 @@ button {
     display: block;
     text-align: center;
     cursor: pointer;
-    background-color: var(--button-color-bg);
+    /* background-color: var(--button-color-bg); */
+    background-image: var(--gradient-2);
+    background-size: 500%;
+    background-position: top;
     color: var(--button-color);
     border-radius: calc(var(--border-radius) * 10);
     padding: 1rem 2rem;
@@ -259,6 +271,7 @@ button {
     -webkit-box-shadow: 0px 0px 0px 0px var(--dark);
     -moz-box-shadow: 0px 0px 0px 0px var(--dark);
     transition: all ease-in-out 200ms;
+    animation: movement 10s infinite alternate;
 }
 
 .link-button:hover {
@@ -275,6 +288,17 @@ button {
     -moz-box-shadow: 0px 0px 0px 0px var(--dark);
 }
 
+@keyframes movement {
+    0% {
+        background-size: 1000%;
+        background-position: left;
+    }
+    100% {
+        background-size: 1000%;
+        background-position: right;
+    }
+}
+
 .link-to-button {
     margin-left: auto;
     margin-top: auto;
@@ -285,7 +309,7 @@ button {
 }
 
 .on-site-button {
-    padding: 1rem 1rem;
+    padding: 1rem .5rem;
 }
 
 .link-to-button,
@@ -517,7 +541,7 @@ button {
 }
 
 .link-logo{
-    padding: 1rem 1rem;
+    padding: 1rem .5rem;
     font-weight: bolder;
     font-family: var(--display-font);
 }
@@ -609,10 +633,12 @@ button {
 }
 
 .profile-pic-container{
-    background-color: var(--peach-1);
+    /* background-color: var(--peach-1); */
+    background-image: var(--gradient-2);
     border-radius: 100px;
     width: 100px;
     height: 100px;
+    animation: movement 10s infinite alternate;
 }
 
 @media (min-width: 425px) {
@@ -945,7 +971,7 @@ button {
 .back-button {
     color: var(--dark);
     font-weight: bolder;
-    padding: 0.4rem 0.6rem;
+    padding: 0.4rem 0.5rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -966,7 +992,7 @@ button {
 }
 
 .image-wrapper {
-    border-top: var(--border-weight) var(--border-color) solid;
+    /* border-top: var(--border-weight) var(--border-color) solid; */
     border-bottom: var(--border-weight) var(--border-color) solid;
     overflow-x: auto;
     /* overflow-x: scroll; */
