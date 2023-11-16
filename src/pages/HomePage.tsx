@@ -10,8 +10,8 @@ function HomePage() {
             <p className='animated-c'>C</p>
             <p className='animated-r'>R</p>
             </div>
-            <p className="portfolio-presentation">{year.getFullYear()} Portfolio</p>
-            <ul className="link-container add-pad">
+            <p className="portfolio-presentation">{year.getFullYear()}</p>
+            <ul className="link-container add-animation">
                 <li>
                     <Link className="link-button" to="/about">
                         <p>About me</p>

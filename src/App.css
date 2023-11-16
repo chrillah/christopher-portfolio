@@ -5,7 +5,14 @@
 :root {
     --font-1: 'Caprasimo', serif;
     --font-2: 'Poppins', sans-serif;
-    --display-font: var(--font-2);
+
+    --mono-font-1: 'Space Mono', monospace;
+    --mono-font-2: 'Anonymous Pro', monospace;
+
+    --logo-font: var(--mono-font-1);
+    --display-font: var(--font-1);
+    --app-font: var(--mono-font-1);
+
     --dark-viol-1: #19073f;
     --light-viol-1: #eadcf3;
     --light-viol-2: #e2dbff;
@@ -69,13 +76,13 @@
 }
 
 body {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--app-font);
     box-sizing: border-box;
     background-color: var(--border-color);
 }
 
 button {
-    font-family: 'Space Mono', monospace;
+    font-family: var(--app-font);
     font-weight: 700;
 }
 
@@ -447,9 +454,26 @@ button {
     padding-bottom: 7rem;
 }
 
-.add-pad {
-    /* padding-top: 54px; */
+
+.add-animation {
+    padding-top: 50px;
+    opacity: 1;
+    animation: link-presentation;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
 }
+
+@keyframes link-presentation {
+    0% {
+        padding-top: 0px;
+        opacity: 0;
+    }
+    100% {
+        padding-top: 50px;
+        opacity: 1;
+    }
+}
+
 
 @media (min-width: 375px) {
     .link-container {
@@ -561,6 +585,7 @@ button {
 }
 
 .logo {
+    font-family: var(--logo-font);
     display: grid;
     grid-template-columns: 10px auto;
     font-weight: 900;
@@ -644,6 +669,7 @@ button {
 }
 
 .portfolio-presentation {
+    font-family: var(--logo-font);
     opacity: 1;
     position: absolute;
     bottom: 2rem;
@@ -663,7 +689,7 @@ button {
 }
 
 .about-item-1-group {
-    padding: 1rem 0.5rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -720,7 +746,7 @@ button {
     display: grid;
     grid-auto-flow: column;
     overflow-x: scroll;
-    gap: 5rem;
+    gap: 4rem;
     padding: 0 6rem;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -752,7 +778,7 @@ button {
     display: grid;
     grid-auto-flow: column;
     overflow-x: scroll;
-    gap: 10rem;
+    gap: 4rem;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
