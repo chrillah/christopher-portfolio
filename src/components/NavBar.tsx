@@ -62,7 +62,7 @@ function NavBar() {
                                 className="link-button"
                                 to="/about"
                             >
-                                About me
+                                <p className='invert-color'>About me</p>
                             </Link>
                         </li>
                         <li>
@@ -71,7 +71,7 @@ function NavBar() {
                                 className="link-button"
                                 to="/projects"
                             >
-                                Projects
+                                <p className='invert-color'>Projects</p>
                             </Link>
                         </li>
                     </ul>

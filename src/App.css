@@ -11,7 +11,7 @@
     --light-viol-1: #eadcf3;
     --light-viol-2: #e2dbff;
 
-    --dark-viol-1: #532F93;
+    --dark-viol-2: #532F93;
     --viol-1: #9E9BF2;
 
     --light-pink-1: #e4dbdb;
@@ -63,8 +63,7 @@
 
     --gradient-2: linear-gradient(
         45deg,
-        var(--dark-viol-1),
-        var(--light-viol-1),
+        var(--viol-1),
         var(--peach-1),
         var(--yellow-1),
         var(--light-viol-2)
@@ -262,7 +261,8 @@ button {
     background-image: var(--gradient-2);
     background-size: 500%;
     background-position: top;
-    color: var(--button-color);
+    color: #000000;
+    /* color: var(--button-color); */
     border-radius: calc(var(--border-radius) * 10);
     padding: 1rem 2rem;
     font-weight: bold;
@@ -286,6 +286,12 @@ button {
     box-shadow: 0px 0px 0px 0px var(--dark);
     -webkit-box-shadow: 0px 0px 0px 0px var(--dark);
     -moz-box-shadow: 0px 0px 0px 0px var(--dark);
+}
+
+.invert-color{
+    color: #000000;
+    filter: invert(1);
+    mix-blend-mode: difference;
 }
 
 @keyframes movement {
@@ -853,6 +859,8 @@ button {
 }
 
 .grid-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -911,12 +919,18 @@ button {
 }
 
 @media (min-width: 618px) {
+    .grid-item:first-child {
+        grid-column: span 2;
+    }
     .grid-item:last-child {
-        grid-column: span 3;
+        grid-column: span 2;
     }
 }
 
 @media (min-width: 1019px) {
+    .grid-item:first-child {
+        grid-column: span 1;
+    }
     .grid-item:last-child {
         grid-column: span 2;
     }
