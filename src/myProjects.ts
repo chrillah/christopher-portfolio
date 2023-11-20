@@ -63,7 +63,7 @@ const myProjects = {
         description:
             'Tjuvgods (Stolen Goods) is an entertaining outcome of a group project conducted within tight time constraints and limited resources. It was designed as an online store to explore the Vue.js framework. The webshop retrieves information from a JSON file and utilizes the Vue.js framework for rendering. The concept for the name and product range emerged as I collected images of various products from Unsplash.',
         linkToWeb: 'https://tjuvgods.netlify.app/',
-        linkToGitHub: 'https://github.com/PhilipSamuelsson/Labb-3-Team-6-',
+        linkToGitHub: 'https://github.com/chrillah/tjuvgods',
         technology: [
             'Vue.js',
             'JavaScript',
