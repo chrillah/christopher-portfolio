@@ -3,7 +3,7 @@ const myProjects = {
         name: 'Techware',
         description:
             'The website serves to demonstrate proficiency in HTML, CSS, and responsive design. I personally crafted the design, envisioning a satirical future where fashion, technology, and propaganda intermingle to exert influence over individuals and their surroundings.',
-        linkToWeb: 'https://techware-fashion-and-tech.netlify.app/',
+        linkToWeb: 'https://techware-techfashion.netlify.app/',
         linkToGitHub: 'https://github.com/chrillah/techware',
         technology: ['HTML&CSS', 'JavaScript']
     },
@@ -19,7 +19,7 @@ const myProjects = {
         name: 'Rick and Morty Card Collector',
         description:
             'The purpose of the website is to demonstrate skills in Native JavaScript, API fetching, and CRUD operations. Users should also be able to save information in local storage and utilize it. I chose to use the Rick and Morty API because the popular series has a lot of interesting characters.',
-        linkToWeb: 'https://rickandmorty-cardcollector.netlify.app/',
+        linkToWeb: 'https://rick-and-morty-card-collector.netlify.app/',
         linkToGitHub:
             'https://github.com/chrillah/rick-and-morty-card-collector',
         technology: ['HTML&CSS', 'JavaScript', 'Fetch']
@@ -77,7 +77,7 @@ const myProjects = {
         name: 'Gomoku',
         description:
             'The Gomuku game, is a part of the Requirements Work course (Kravarbete) at ITHS. The game should connect backend with frontend, test different states, and meet the requirement for the User Story: As a player, I want to play a game of gomoku so that I can win, lose, or tie. The design should reflect playfulness, Japanese minimalism, and accessibility. Uses Firebase Realtime Database to manage the different states',
-        linkToWeb: null,
+        linkToWeb: 'https://gomoku-proj.netlify.app/',
         linkToGitHub: 'https://github.com/chrillah/gomoku',
         technology: [
             'React',
