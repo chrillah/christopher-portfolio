@@ -4,14 +4,13 @@ function AboutMe() {
         <div className="about-wrapper">
             {/* första man ser */}
             <div className="about-container-1">
-                <div className="about-item-1" >
+                <div className="about-item-1">
                     <h1 className="big-title">About me</h1>
                 </div>
 
                 <div className="about-item-2">
                     <div className="about-item-1-group">
-                    <div className="profile-pic-container">
-                        </div>
+                        <div className="profile-pic-container"></div>
                         <p className="presentation-text">
                             By combining my knowledge of UX, graphic design, and
                             frontend development, I can create innovative and
@@ -103,6 +102,19 @@ function AboutMe() {
                 <h3 className="about-title">Work experience</h3>
                 <ul className="work-list">
                     <li className="work-item">
+                        <h2 className="year-title">2024</h2>
+                        <h4 className="work-place">Tink</h4>
+                        <h5 className="work-title">Front end Engineer</h5>
+                        <p className="work-text">
+                            Expanding my proficiency in React, I authored
+                            comprehensive tests, conducted refactoring
+                            operations, and maintained component updates. This
+                            process provided me with invaluable insights into
+                            agile methodologies, Git version control, and
+                            advanced development practices
+                        </p>
+                    </li>
+                    <li className="work-item">
                         <h2 className="year-title">2023</h2>
                         <h4 className="work-place">Fill</h4>
                         <h5 className="work-title">Developer, UX&UI Design</h5>
@@ -115,9 +127,7 @@ function AboutMe() {
                     </li>
                     <li className="work-item">
                         <h2 className="year-title">2020 - 2022</h2>
-                        <h4 className="work-place">
-                            Hässelby Villastad Skola
-                        </h4>
+                        <h4 className="work-place">Hässelby Villastad Skola</h4>
                         <h5 className="work-title">
                             Teacher of Swedish, English and Mathematics.
                         </h5>
